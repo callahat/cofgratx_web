@@ -1,0 +1,131 @@
+html {}
+body {background-color: #000000;
+      width:75%;
+      min-width:840px;
+	  margin-left:auto;
+	  margin-right:auto;
+	  text-align:center;}
+	  
+h1 {margin:3px;
+    padding:3px;}
+	  
+div {text-align:left;}
+				
+div.notices {color:#008800;
+             background-color:#DDDDDD;
+			 text-align:center;}
+
+div.yield {background-color:#CCCCCC;}
+				
+div.navigation {font-size:150%;
+	            margin:left;}
+
+div.welcome {float:right;
+             margin:5px;
+			 padding:0 1em 0 1em;
+			 background-color:#BBBBBB;}
+				
+ul {list-style-type:none;
+    list-style-position:inside;
+	height:100%;
+	display:block;
+	margin:3px;
+	padding:0px;
+	border-width:3px;
+	border-color:#111111;
+	background-color:#777777;}
+	
+li {display:inline;
+    background-color:#AAAAAA;}
+
+li.nav_link span{width:100%;
+		margin:auto;
+		padding:0 2em 0 2em;}
+		
+li.current_tab,
+li.current_tab:hover,
+li.current_tab:hover{
+  background-color:#CCCCCC;
+  list-style-type:disc !important;}
+
+a{text-decoration:none; color:#000000;}
+
+li:hover {background-color:#BBBBBB;}
+li:active {background-color:#FFFFFF;}
+
+
+ul.sub_tabs {font-size:85%;}
+ul.form {background-color:inherit;
+         margin-right:60%}
+ul.form li {display:block;
+            text-align:right;}
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: inline;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+  display: block;
+  list-style-position: inside;
+  display:list-item;
+  background-color:#F0F0F0;
+}
+
+div.grammar_yield{
+  margin-left:8em;
+  padding:5px;}
+
+div.grammar_side_bar {
+  display: block;
+  float: left;
+  padding: 5px;
+}
+
+.grammar_side_bar ul li.title {display:inline;}
+.grammar_side_bar ul {padding:1px;}
+
+.grammar_side_bar ul li {
+  list-style: square;
+  display: block;
+  list-style-position: inside;
+  display:list-item;
+  width:7em;
+}
+
+li a {width:100%;}
+
+li.grammar_side_bar span{width:100%}
+
+code {
+  display:block;
+  margin-left: 1em;
+  padding:5px;}

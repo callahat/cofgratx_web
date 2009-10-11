@@ -1,0 +1,12 @@
+<%= Time.now.strftime("%B %d, %Y") %>
+
+
+Dear <%= @username %>,
+ 
+Thank you for registering an account for COFGRATX at callahat.net.
+Before your account is active, you will need to click the link below,
+or copy and paste it into your address bar.
+http://www.callahat.net/user/activation?foo=<%= @reg_hash %>&bar=<%= @username %>
+
+Have a nice day,
+The Registration System

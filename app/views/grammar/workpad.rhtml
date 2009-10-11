@@ -1,0 +1,19 @@
+<div class="grammar_side_bar">
+  <%= side_bar(@grammars) %>
+</div>
+<div class="grammar_yield">
+  <h1>Workbench</h1>
+  <% if session[:current_grammar].nil? %>
+    Please choose a grammar from the left.
+  <% else %>
+    <%= session[:current_grammar].name %> is the current grammar.
+
+
+
+    <p>Rules for the current grammar:</p>
+    <% cache :action_tag => session[:current_grammar].name do %>
+  
+    <% end %>
+    <%= print_rules(session[:current_grammar]) %>
+  <% end %>
+</div>
