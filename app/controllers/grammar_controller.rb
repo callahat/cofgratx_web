@@ -40,9 +40,26 @@ class GrammarController < ApplicationController
   end
   
   def new
+    @grammar = Grammar.new
+    @rule_array = [Rule.new]
   end
   
   def create
+    print "FROM THE CREATE CONTROLLER:\n"
+    @grammar = Grammar.new(params[:grammar])
+	@rule_array = []#[Rule.new,Rule.new]
+	print params[:rule]["0"].inspect
+	params[:rule].sort.each { |r|
+	  print "RULE:" + r[0] + ":" + r[1].inspect + "\n"
+	  if r[1].nil?
+	    @rule_array << Rule.new
+	  else
+	    @rule_array << Rule.new(r[1])
+	  end
+	}
+	print "Rules:" + @rule_array.inspect() +"\n"
+	print "THATS IT FOR THE CREATE CONTROLLER"
+	render :action => 'new'
   end
   
   def edit

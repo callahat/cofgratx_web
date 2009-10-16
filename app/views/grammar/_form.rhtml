@@ -1,0 +1,34 @@
+<%= error_messages_for 'grammar' %>
+
+<!--[form:grammar]-->
+
+<ul class="form">
+  <li><label for="grammar_name">Name:</label>
+      <%= text_field 'grammar', 'name', :disabled => (controller.action_name == 'edit') %></li>
+  <li><label for="grammar_name">Description:</label>
+      <%= text_field 'grammar', 'desc' %></li>
+  <li><label for="grammar_public">Public:</label>
+      <%= check_box 'grammar', 'public' %></li>
+</ul>
+
+<ul class="form_wide">
+  <div id="rule_fields">
+    <%= rule_input_fields %>
+  </div>
+</ul>
+<ul class="form"><li><input type="button" value="Add another rule" onClick='addRuleRow();'></li></ul>
+<!--[eoform:user]-->
+
+<script type="text/javascript">
+function addRuleRow(){
+  var t = document.getElementById('rule_table');
+  var row = t.insertRow(t.rows.length);
+  var size = t.rows.length - 2
+  var n = row.insertCell(0);
+  var p = row.insertCell(1);
+  var tx = row.insertCell(2);
+  n.innerHTML = "<%= text_field('rule', 'name', 'index' => 'size', 'class' => 'fit').gsub(/\"/,"\\\"") %>";
+  p.innerHTML = "<%= text_field('rule', 'pattern', 'index' => 'size', 'class' => 'fit').gsub(/\"/,"\\\"") %>";
+  tx.innerHTML = "<%= text_field('rule', 'translation', 'index' => 'size', 'class' => 'fit').gsub(/\"/,"\\\"") %>";
+}
+</script>

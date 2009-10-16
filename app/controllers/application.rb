@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   
   def check_signed_in
 	if session[:user].nil?
-		redirect_to :controller => 'users', :action => 'login'
+		redirect_to :controller => 'user', :action => 'login'
 		return false
 	end
   end
