@@ -1,18 +1,18 @@
 module GrammarHelper
-  def side_bar(grammar_hash)
-    if grammar_hash[:mine].size + grammar_hash[:public].size == 0
-	  return "\n<ul>\n<li class=\"title\"><div>No Grammars!</div></li>\n</ul>"
-	end
-    lis = ""
-    lis += "\n<li class=\"title\"><div>My Grammars</div></li>\n" if grammar_hash[:mine].size > 0
-	[:mine, :public].each{|whose|
+  def side_bar(grammar_hash, owners = [:mine, :public])
+	lis = {:mine => "", :public => ""}
+	
+	owners.each{|whose|
 	  grammar_hash[whose].each{|grammar|
-	    lis += side_bar_link(grammar) + "\n"
+	    lis[whose] += side_bar_link(grammar) + "\n"
       }
-	  lis += "<li class=\"title\"><div>Public Grammars</div></li>\n" if grammar_hash[:public].size > 0 && whose == :mine
 	}
     
-	return "<ul>\n" + lis + "\n</ul>"
+	lis[:mine] = "<li class=\"title\"><div>My Grammars</div></li>\n" + lis[:mine] if lis[:mine].length > 0
+	lis[:public] = "<li class=\"title\"><div>Public Grammars</div></li>\n" + lis[:public] if lis[:public].length > 0
+	
+	return "\n<ul>\n<li class=\"title\"><div>No Grammars!</div></li>\n</ul>" if (lis[:mine].length + lis[:public].length == 0)
+	return "<ul>\n" + lis[:mine] + lis[:public] + "\n</ul>"
   end
   
   def side_bar_link(grammar)
@@ -37,9 +37,9 @@ module GrammarHelper
 	return text + "\n</table>"
   end
   
-  def rule_input_fields
+  def rule_input_fields(ra)
     text = table_header
-    0.upto(@rule_array.size-1) {|r|
+    0.upto(ra.size-1) {|r|
 	  @rule = @rule_array[r]
 	  name_input =        text_field('rule', 'name', 'index' => r, 'class' => 'fit')
 	  pattern_input =     text_field('rule', 'pattern', 'index' => r, 'class' => 'fit')

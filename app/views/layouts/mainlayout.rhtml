@@ -8,7 +8,6 @@
   <%= stylesheet_link_tag 'cofgratx' %>
 </head>
 <body>
-<% print session[:user].nil?.to_s + "\n" %>
 <% cache :action_suffix => "nav" + session[:user].nil?.to_s do %>
   <div class="navigation">
     <ul class="main_tabs">

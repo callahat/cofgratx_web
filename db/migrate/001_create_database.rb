@@ -41,7 +41,7 @@ class CreateDatabase < ActiveRecord::Migration
     create_table "rules", :force => true do |t|
       t.column "grammar_id",  :integer,                                :null => false
       t.column "pattern",     :string,  :limit => 256, :default => "", :null => false
-      t.column "translation", :string,  :limit => 256, :default => "", :null => false
+      t.column "translation", :string,  :limit => 256
       t.column "name",        :string,  :limit => 32,  :default => "", :null => false
 	  t.column "priority",    :integer, :limit => 3
     end

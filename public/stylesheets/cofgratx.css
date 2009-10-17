@@ -192,4 +192,5 @@ div.rule_line {
 code {
   display:block;
   margin-left: 1em;
-  padding:5px;}
+  padding:5px;
+  white-space:pre;}

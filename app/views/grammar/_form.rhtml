@@ -13,7 +13,7 @@
 
 <ul class="form_wide">
   <div id="rule_fields">
-    <%= rule_input_fields %>
+    <%= rule_input_fields(@rule_array) %>
   </div>
 </ul>
 <ul class="form"><li><input type="button" value="Add another rule" onClick='addRuleRow();'></li></ul>
@@ -27,8 +27,8 @@ function addRuleRow(){
   var n = row.insertCell(0);
   var p = row.insertCell(1);
   var tx = row.insertCell(2);
-  n.innerHTML = "<%= text_field('rule', 'name', 'index' => 'size', 'class' => 'fit').gsub(/\"/,"\\\"") %>";
-  p.innerHTML = "<%= text_field('rule', 'pattern', 'index' => 'size', 'class' => 'fit').gsub(/\"/,"\\\"") %>";
-  tx.innerHTML = "<%= text_field('rule', 'translation', 'index' => 'size', 'class' => 'fit').gsub(/\"/,"\\\"") %>";
+  n.innerHTML = "<%= text_field('rule', 'name', 'index' => 'INDEX', 'class' => 'fit').gsub(/\"/,"\\\"") %>".replace(/INDEX/g, size);
+  p.innerHTML = "<%= text_field('rule', 'pattern', 'index' => 'INDEX', 'class' => 'fit').gsub(/\"/,"\\\"") %>".replace(/INDEX/g, size);
+  tx.innerHTML = "<%= text_field('rule', 'translation', 'index' => 'INDEX', 'class' => 'fit').gsub(/\"/,"\\\"") %>".replace(/INDEX/g, size);
 }
 </script>

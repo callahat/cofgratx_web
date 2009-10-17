@@ -1,0 +1,21 @@
+<div class="grammar_side_bar">
+  <ul>
+    <li class="grammar_side_bar"><%= link_to(span_wrap("New Grammar"), :action => 'new') %></li>
+  </ul>
+  <%= side_bar(@grammars, [:mine]) %>
+</div>
+<div class="grammar_yield">
+  <h1>My Grammars</h1>
+  <% if session[:current_grammar].nil? %>
+    Please choose a grammar from the left.
+  <% else %>
+    <% cache :action_tag => session[:current_grammar].name do %>
+      "<%= session[:current_grammar].name %>" is the current grammar. It contains <%= session[:current_grammar].rules.size %> rules, listed below.
+	  
+      <%= print_rules(session[:current_grammar]) %>
+
+	  <ul class="form"><li><%= link_to 'Edit', :action => 'edit', :id => session[:current_grammar] %></li></ul>
+	  <ul class="form"><li><%= link_to 'Destroy', {:action => 'destroy', :id => session[:current_grammar]}, :confirm => 'Are you sure?', :method => :post %></li></ul>
+    <% end %>
+  <% end %>
+</div>

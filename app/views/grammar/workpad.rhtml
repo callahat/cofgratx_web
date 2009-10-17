@@ -8,8 +8,6 @@
   <% else %>
     <%= session[:current_grammar].name %> is the current grammar.
 
-
-
     <p>Rules for the current grammar:</p>
     <% cache :action_tag => session[:current_grammar].name do %>
   
