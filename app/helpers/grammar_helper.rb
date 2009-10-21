@@ -41,9 +41,9 @@ module GrammarHelper
     text = table_header
     0.upto(ra.size-1) {|r|
 	  @rule = @rule_array[r]
-	  name_input =        text_field('rule', 'name', 'index' => r, 'class' => 'fit')
-	  pattern_input =     text_field('rule', 'pattern', 'index' => r, 'class' => 'fit')
-	  translation_input = text_field('rule', 'translation', 'index' => r, 'class' => 'fit')
+	  name_input =        text_field('rule', 'name', 'index' => r, 'class' => 'fit rule')
+	  pattern_input =     text_field('rule', 'pattern', 'index' => r, 'class' => 'fit rule')
+	  translation_input = text_field('rule', 'translation', 'index' => r, 'class' => 'fit rule')
 	  
 	  text += "<tr>\n" +
 	          " <td>" + name_input + "</td>\n" +

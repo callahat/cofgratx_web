@@ -8,6 +8,20 @@
   <% else %>
     <%= session[:current_grammar].name %> is the current grammar.
 
+	<% form_tag :action => 'translate', :id => session[:current_grammar] do %>
+	  <ul class="form">
+      <li><label for="start">Initial Rule:</label>
+        <input id="start" type="text" value="<%= @start %>" size="30" name="start" class="rule"/></li>
+      <li><label for="string">String:</label>
+	    <input id="string" type="text" value="<%= @string %>" size="30" name="string" class="rule"/></li>
+      <li><label for="result">Result:</label>
+	    <input id="result" type="text" value="<%= @result %>" size="30" name="result" disabled class="rule"/></li>
+	  </ul>
+      <ul class="form"><li><%= submit_tag 'Evaluate/Translate' %></li></ul>
+    <% end %>
+	
+	
+	
     <p>Rules for the current grammar:</p>
     <% cache :action_tag => session[:current_grammar].name do %>
   

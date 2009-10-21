@@ -31467,3 +31467,1304 @@ Processing GrammarController#help (for 127.0.0.1 at 2009-10-17 18:30:52) [GET]
 Rendering  within layouts/mainlayout
 Rendering grammar/help
 Completed in 0.01500 (66 reqs/sec) | Rendering: 0.01100 (73%) | DB: 0.00600 (40%) | 200 OK [http://www.callahat.net/grammar/help]
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: MySQL server has gone away: ROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.003000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#help (for 127.0.0.1 at 2009-10-19 20:06:22) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"help", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.001000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.001000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/help
+Completed in 0.02600 (38 reqs/sec) | Rendering: 0.02100 (80%) | DB: 0.00800 (30%) | 200 OK [http://www.callahat.net/grammar/help]
+  [4;36;1mUser Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.002000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#help (for 127.0.0.1 at 2009-10-19 20:06:27) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"help", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.000000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/help
+Completed in 0.01200 (83 reqs/sec) | Rendering: 0.00800 (66%) | DB: 0.00400 (33%) | 200 OK [http://www.callahat.net/grammar/help]
+  [4;36;1mUser Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.002000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#help (for 127.0.0.1 at 2009-10-19 20:06:33) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"help", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.001000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/help
+Completed in 0.01200 (83 reqs/sec) | Rendering: 0.00800 (66%) | DB: 0.00500 (41%) | 200 OK [http://www.callahat.net/grammar/help]
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.003000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#help (for 127.0.0.1 at 2009-10-19 20:16:46) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"help", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.001000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.000000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/help
+Completed in 0.02200 (45 reqs/sec) | Rendering: 0.01800 (81%) | DB: 0.00700 (31%) | 200 OK [http://www.callahat.net/grammar/help]
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.003000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#help (for 127.0.0.1 at 2009-10-19 20:27:04) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"help", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.001000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/help
+Completed in 0.02800 (35 reqs/sec) | Rendering: 0.02400 (85%) | DB: 0.00700 (25%) | 200 OK [http://www.callahat.net/grammar/help]
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.002000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#help (for 127.0.0.1 at 2009-10-19 20:28:03) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"help", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.002000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/help
+Completed in 0.02900 (34 reqs/sec) | Rendering: 0.02400 (82%) | DB: 0.00700 (24%) | 200 OK [http://www.callahat.net/grammar/help]
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.002000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#help (for 127.0.0.1 at 2009-10-19 20:28:30) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"help", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.000000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/help
+Completed in 0.02600 (38 reqs/sec) | Rendering: 0.02200 (84%) | DB: 0.00500 (19%) | 200 OK [http://www.callahat.net/grammar/help]
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.002000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#help (for 127.0.0.1 at 2009-10-19 20:30:21) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"help", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.001000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.000000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/help
+Completed in 0.02800 (35 reqs/sec) | Rendering: 0.02400 (85%) | DB: 0.00600 (21%) | 200 OK [http://www.callahat.net/grammar/help]
+  [4;36;1mUser Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.003000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#help (for 127.0.0.1 at 2009-10-19 20:33:26) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"help", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.001000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/help
+Completed in 0.03300 (30 reqs/sec) | Rendering: 0.02900 (87%) | DB: 0.00600 (18%) | 200 OK [http://www.callahat.net/grammar/help]
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.004000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#help (for 127.0.0.1 at 2009-10-19 20:33:58) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"help", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.001000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.000000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/help
+Completed in 0.01800 (55 reqs/sec) | Rendering: 0.01400 (77%) | DB: 0.00800 (44%) | 200 OK [http://www.callahat.net/grammar/help]
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.003000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#help (for 127.0.0.1 at 2009-10-19 20:35:27) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"help", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.001000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/help
+Completed in 0.09600 (10 reqs/sec) | Rendering: 0.09200 (95%) | DB: 0.00700 (7%) | 200 OK [http://www.callahat.net/grammar/help]
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.003000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#my_grammars (for 127.0.0.1 at 2009-10-19 20:36:41) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"my_grammars", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.001000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.001000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/my_grammars
+  [4;36;1mRule Columns (0.005000)[0m   [0;1mSHOW FIELDS FROM rules[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM rules WHERE (rules.grammar_id = 11) [0m
+  [4;36;1mRule Load (0.001000)[0m   [0;1mSELECT * FROM rules WHERE (rules.grammar_id = 11) [0m
+Completed in 0.02800 (35 reqs/sec) | Rendering: 0.01600 (57%) | DB: 0.01500 (53%) | 200 OK [http://www.callahat.net/grammar/my_grammars]
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mGrammar Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 20:36:45) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;35;1mGrammar Load (0.000000)[0m   [0mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+  [4;35;1mRule Load (0.000000)[0m   [0mSELECT * FROM rules WHERE (rules.grammar_id = 11) [0m
+  [4;36;1mRule Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM rules[0m
+Completed in 0.02500 (39 reqs/sec) | Rendering: 0.01800 (72%) | DB: 0.00900 (36%) | 200 OK [http://www.callahat.net/grammar/workpad]
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mGrammar Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 20:50:35) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;35;1mGrammar Load (0.001000)[0m   [0mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;36;1mGrammar Load (0.001000)[0m   [0;1mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+
+
+ActionView::TemplateError (wrong number of arguments (1 for 2)) on line #13 of app/views/grammar/workpad.rhtml:
+10: 
+11: 	<% form_tag :action => 'translate', :id => session[:current_grammar] do %>
+12:       <li><label for="start">Initial Rule:</label>
+13:         <%= text_field 'start' %></li>
+14:       <li><label for="string">String:</label>
+15:         <%= text_field 'string' %></li>
+16:       <li><label for="result">Email:</label>
+
+    #{RAILS_ROOT}/app/views/grammar/workpad.rhtml:13:in `text_field'
+    #{RAILS_ROOT}/app/views/grammar/workpad.rhtml:13:in `_run_rhtml_47app47views47grammar47workpad46rhtml'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:108:in `call'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:108:in `capture_erb_with_buffer'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:67:in `capture'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_tag_helper.rb:51:in `form_tag'
+    #{RAILS_ROOT}/app/views/grammar/workpad.rhtml:11:in `_run_rhtml_47app47views47grammar47workpad46rhtml'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:247:in `render_without_benchmark'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    C:/working/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:438:in `call'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:78:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `synchronize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:618:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:271:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:127:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/command.rb:211:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:243
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16:in `load'
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16
+
+
+Rendering C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mGrammar Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 20:50:55) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;35;1mGrammar Load (0.001000)[0m   [0mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+  [4;35;1mRule Load (0.001000)[0m   [0mSELECT * FROM rules WHERE (rules.grammar_id = 11) [0m
+  [4;36;1mRule Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM rules[0m
+Completed in 0.02900 (34 reqs/sec) | Rendering: 0.02100 (72%) | DB: 0.01100 (37%) | 200 OK [http://www.callahat.net/grammar/workpad]
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mGrammar Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 20:51:22) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;35;1mGrammar Load (0.000000)[0m   [0mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;36;1mGrammar Load (0.001000)[0m   [0;1mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+  [4;35;1mRule Load (0.001000)[0m   [0mSELECT * FROM rules WHERE (rules.grammar_id = 11) [0m
+  [4;36;1mRule Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM rules[0m
+Completed in 0.10800 (9 reqs/sec) | Rendering: 0.10000 (92%) | DB: 0.01200 (11%) | 200 OK [http://www.callahat.net/grammar/workpad]
+  [4;35;1mUser Columns (0.002000)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mGrammar Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 20:51:43) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;35;1mGrammar Load (0.001000)[0m   [0mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+  [4;35;1mRule Load (0.001000)[0m   [0mSELECT * FROM rules WHERE (rules.grammar_id = 11) [0m
+  [4;36;1mRule Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM rules[0m
+Completed in 0.03200 (31 reqs/sec) | Rendering: 0.02300 (71%) | DB: 0.01000 (31%) | 200 OK [http://www.callahat.net/grammar/workpad]
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mGrammar Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 20:52:09) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;35;1mGrammar Load (0.001000)[0m   [0mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+  [4;35;1mRule Load (0.001000)[0m   [0mSELECT * FROM rules WHERE (rules.grammar_id = 11) [0m
+  [4;36;1mRule Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM rules[0m
+Completed in 0.03000 (33 reqs/sec) | Rendering: 0.02200 (73%) | DB: 0.01000 (33%) | 200 OK [http://www.callahat.net/grammar/workpad]
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mGrammar Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 20:53:21) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;35;1mGrammar Load (0.000000)[0m   [0mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;36;1mGrammar Load (0.001000)[0m   [0;1mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+  [4;35;1mRule Load (0.000000)[0m   [0mSELECT * FROM rules WHERE (rules.grammar_id = 11) [0m
+  [4;36;1mRule Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM rules[0m
+Completed in 0.02700 (37 reqs/sec) | Rendering: 0.02100 (77%) | DB: 0.00900 (33%) | 200 OK [http://www.callahat.net/grammar/workpad]
+  [4;35;1mUser Columns (0.002000)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mGrammar Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 20:54:27) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;35;1mGrammar Load (0.001000)[0m   [0mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;36;1mGrammar Load (0.001000)[0m   [0;1mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+
+
+ActionView::TemplateError (undefined method `start' for #<Hash:0x6343dc4>) on line #14 of app/views/grammar/workpad.rhtml:
+11: 	<% form_tag :action => 'translate', :id => session[:current_grammar] do %>
+12: 	  <ul class="form">
+13:       <li><label for="cfg_start">Initial Rule:</label>
+14:         <%= text_field 'cfg', 'start' %></li>
+15:       <li><label for="cfg_string">String:</label>
+16:         <%= text_field 'cfg', 'string' %></li>
+17:       <li><label for="cfg_result">Result:</label>
+
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:356:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:356:in `value_before_type_cast'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:344:in `value_before_type_cast'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:259:in `to_input_field_tag'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:162:in `text_field'
+    #{RAILS_ROOT}/app/views/grammar/workpad.rhtml:14:in `_run_rhtml_47app47views47grammar47workpad46rhtml'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:108:in `call'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:108:in `capture_erb_with_buffer'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:67:in `capture'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_tag_helper.rb:51:in `form_tag'
+    #{RAILS_ROOT}/app/views/grammar/workpad.rhtml:11:in `_run_rhtml_47app47views47grammar47workpad46rhtml'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:247:in `render_without_benchmark'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    C:/working/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:438:in `call'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:78:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `synchronize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:618:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:271:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:127:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/command.rb:211:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:243
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16:in `load'
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16
+
+
+Rendering C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mGrammar Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 20:54:49) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;35;1mGrammar Load (0.001000)[0m   [0mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+
+
+NameError (undefined local variable or method `cfg' for #<GrammarController:0x612f538>):
+    /app/controllers/grammar_controller.rb:15:in `workpad'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `perform_action_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:438:in `call'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:78:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `synchronize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:618:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:271:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:127:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/command.rb:211:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:243
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16:in `load'
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16
+
+
+Rendering C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+  [4;35;1mUser Columns (0.002000)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mGrammar Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 20:55:07) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;35;1mGrammar Load (0.000000)[0m   [0mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+
+
+ActionView::TemplateError (undefined method `start' for #<Hash:0x61e48ac>) on line #14 of app/views/grammar/workpad.rhtml:
+11: 	<% form_tag :action => 'translate', :id => session[:current_grammar] do %>
+12: 	  <ul class="form">
+13:       <li><label for="cfg_start">Initial Rule:</label>
+14:         <%= text_field 'cfg', 'start' %></li>
+15:       <li><label for="cfg_string">String:</label>
+16:         <%= text_field 'cfg', 'string' %></li>
+17:       <li><label for="cfg_result">Result:</label>
+
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:356:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:356:in `value_before_type_cast'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:344:in `value_before_type_cast'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:259:in `to_input_field_tag'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:162:in `text_field'
+    #{RAILS_ROOT}/app/views/grammar/workpad.rhtml:14:in `_run_rhtml_47app47views47grammar47workpad46rhtml'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:108:in `call'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:108:in `capture_erb_with_buffer'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:67:in `capture'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_tag_helper.rb:51:in `form_tag'
+    #{RAILS_ROOT}/app/views/grammar/workpad.rhtml:11:in `_run_rhtml_47app47views47grammar47workpad46rhtml'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:247:in `render_without_benchmark'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    C:/working/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:438:in `call'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:78:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `synchronize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:618:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:271:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:127:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/command.rb:211:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:243
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16:in `load'
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16
+
+
+Rendering C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mGrammar Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 20:55:46) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;35;1mGrammar Load (0.000000)[0m   [0mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+
+
+NoMethodError (undefined method `start' for #<Hash:0x61be968>):
+    /app/controllers/grammar_controller.rb:16:in `workpad'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `perform_action_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:438:in `call'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:78:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `synchronize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:618:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:271:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:127:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/command.rb:211:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:243
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16:in `load'
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16
+
+
+Rendering C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mGrammar Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 20:57:43) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;35;1mGrammar Load (0.001000)[0m   [0mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;36;1mGrammar Load (0.001000)[0m   [0;1mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+
+
+NoMethodError (undefined method `start' for #<Hash:0x632f11c>):
+    /app/controllers/grammar_controller.rb:16:in `workpad'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `perform_action_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:438:in `call'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:78:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `synchronize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:618:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:271:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:127:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/command.rb:211:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:243
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16:in `load'
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16
+
+
+Rendering C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mGrammar Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 20:57:45) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;35;1mGrammar Load (0.000000)[0m   [0mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+
+
+NoMethodError (undefined method `start' for #<Hash:0x61c0768>):
+    /app/controllers/grammar_controller.rb:16:in `workpad'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `perform_action_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:438:in `call'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:78:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `synchronize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:618:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:271:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:127:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/command.rb:211:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:243
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16:in `load'
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16
+
+
+Rendering C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+  [4;35;1mUser Columns (0.002000)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mGrammar Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 20:58:17) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;35;1mGrammar Load (0.000000)[0m   [0mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+
+
+ActionView::TemplateError (interning empty string) on line #14 of app/views/grammar/workpad.rhtml:
+11: 	<% form_tag :action => 'translate', :id => session[:current_grammar] do %>
+12: 	  <ul class="form">
+13:       <li><label for="cfg_start">Initial Rule:</label>
+14:         <%= text_field 'start', '', {:name => "start"} %></li>
+15:       <li><label for="cfg_string">String:</label>
+16:         <%= text_field 'string', '', {:name => "string"} %></li>
+17:       <li><label for="cfg_result">Result:</label>
+
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:356:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:356:in `value_before_type_cast'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:344:in `value_before_type_cast'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:259:in `to_input_field_tag'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:162:in `text_field'
+    #{RAILS_ROOT}/app/views/grammar/workpad.rhtml:14:in `_run_rhtml_47app47views47grammar47workpad46rhtml'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:108:in `call'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:108:in `capture_erb_with_buffer'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:67:in `capture'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_tag_helper.rb:51:in `form_tag'
+    #{RAILS_ROOT}/app/views/grammar/workpad.rhtml:11:in `_run_rhtml_47app47views47grammar47workpad46rhtml'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:247:in `render_without_benchmark'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    C:/working/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:438:in `call'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:78:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `synchronize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:618:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:271:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:127:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/command.rb:211:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:243
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16:in `load'
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16
+
+
+Rendering C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+  [4;35;1mUser Columns (0.002000)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mGrammar Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 21:00:24) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;35;1mGrammar Load (0.000000)[0m   [0mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+
+
+ActionView::TemplateError (interning empty string) on line #14 of app/views/grammar/workpad.rhtml:
+11: 	<% form_tag :action => 'translate', :id => session[:current_grammar] do %>
+12: 	  <ul class="form">
+13:       <li><label for="cfg_start">Initial Rule:</label>
+14:         <%= text_field 'start', '', {:name => "start"} %></li>
+15:       <li><label for="cfg_string">String:</label>
+16:         <%= text_field 'string', '', {:name => "string"} %></li>
+17:       <li><label for="cfg_result">Result:</label>
+
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:356:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:356:in `value_before_type_cast'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:344:in `value_before_type_cast'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:259:in `to_input_field_tag'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:162:in `text_field'
+    #{RAILS_ROOT}/app/views/grammar/workpad.rhtml:14:in `_run_rhtml_47app47views47grammar47workpad46rhtml'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:108:in `call'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:108:in `capture_erb_with_buffer'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:67:in `capture'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_tag_helper.rb:51:in `form_tag'
+    #{RAILS_ROOT}/app/views/grammar/workpad.rhtml:11:in `_run_rhtml_47app47views47grammar47workpad46rhtml'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:247:in `render_without_benchmark'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    C:/working/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:438:in `call'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:78:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `synchronize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:618:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:271:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:127:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/command.rb:211:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:243
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16:in `load'
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16
+
+
+Rendering C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mGrammar Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 21:00:40) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;35;1mGrammar Load (0.000000)[0m   [0mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+
+
+ActionView::TemplateError (undefined method `namestart' for "init rule":String) on line #14 of app/views/grammar/workpad.rhtml:
+11: 	<% form_tag :action => 'translate', :id => session[:current_grammar] do %>
+12: 	  <ul class="form">
+13:       <li><label for="cfg_start">Initial Rule:</label>
+14:         <%= text_field 'start', {:name => "start"} %></li>
+15:       <li><label for="cfg_string">String:</label>
+16:         <%= text_field 'string', {:name => "string"} %></li>
+17:       <li><label for="cfg_result">Result:</label>
+
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:356:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:356:in `value_before_type_cast'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:344:in `value_before_type_cast'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:259:in `to_input_field_tag'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:162:in `text_field'
+    #{RAILS_ROOT}/app/views/grammar/workpad.rhtml:14:in `_run_rhtml_47app47views47grammar47workpad46rhtml'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:108:in `call'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:108:in `capture_erb_with_buffer'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:67:in `capture'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_tag_helper.rb:51:in `form_tag'
+    #{RAILS_ROOT}/app/views/grammar/workpad.rhtml:11:in `_run_rhtml_47app47views47grammar47workpad46rhtml'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:247:in `render_without_benchmark'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    C:/working/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:438:in `call'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:78:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `synchronize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:618:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:271:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:127:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/command.rb:211:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:243
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16:in `load'
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16
+
+
+Rendering C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mGrammar Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 21:01:05) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;35;1mGrammar Load (0.000000)[0m   [0mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+
+
+ActionView::TemplateError (undefined method `s' for "init rule":String) on line #14 of app/views/grammar/workpad.rhtml:
+11: 	<% form_tag :action => 'translate', :id => session[:current_grammar] do %>
+12: 	  <ul class="form">
+13:       <li><label for="cfg_start">Initial Rule:</label>
+14:         <%= text_field 'start', 's', {:name => "start"} %></li>
+15:       <li><label for="cfg_string">String:</label>
+16:         <%= text_field 'string', 's', {:name => "string"} %></li>
+17:       <li><label for="cfg_result">Result:</label>
+
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:356:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:356:in `value_before_type_cast'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:344:in `value_before_type_cast'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:259:in `to_input_field_tag'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:162:in `text_field'
+    #{RAILS_ROOT}/app/views/grammar/workpad.rhtml:14:in `_run_rhtml_47app47views47grammar47workpad46rhtml'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:108:in `call'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:108:in `capture_erb_with_buffer'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:67:in `capture'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_tag_helper.rb:51:in `form_tag'
+    #{RAILS_ROOT}/app/views/grammar/workpad.rhtml:11:in `_run_rhtml_47app47views47grammar47workpad46rhtml'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:247:in `render_without_benchmark'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    C:/working/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:438:in `call'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:78:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `synchronize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:618:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:271:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:127:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/command.rb:211:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:243
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16:in `load'
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16
+
+
+Rendering C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mGrammar Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 21:01:33) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;35;1mGrammar Load (0.001000)[0m   [0mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+
+
+ActionView::TemplateError (interning empty string) on line #14 of app/views/grammar/workpad.rhtml:
+11: 	<% form_tag :action => 'translate', :id => session[:current_grammar] do %>
+12: 	  <ul class="form">
+13:       <li><label for="start">Initial Rule:</label>
+14:         <%= text_field 'start', '', {:name => "start"} %></li>
+15:       <li><label for="string">String:</label>
+16:         <%= text_field 'string', '', {:name => "string"} %></li>
+17:       <li><label for="result">Result:</label>
+
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:356:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:356:in `value_before_type_cast'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:344:in `value_before_type_cast'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:259:in `to_input_field_tag'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:162:in `text_field'
+    #{RAILS_ROOT}/app/views/grammar/workpad.rhtml:14:in `_run_rhtml_47app47views47grammar47workpad46rhtml'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:108:in `call'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:108:in `capture_erb_with_buffer'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:67:in `capture'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_tag_helper.rb:51:in `form_tag'
+    #{RAILS_ROOT}/app/views/grammar/workpad.rhtml:11:in `_run_rhtml_47app47views47grammar47workpad46rhtml'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:247:in `render_without_benchmark'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    C:/working/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:438:in `call'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:78:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `synchronize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:618:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `process_client'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `initialize'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `new'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:271:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `each'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:127:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/command.rb:211:in `run'
+    C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:243
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16:in `load'
+    C:/working/INSTAN~1/ruby/bin/mongrel_rails:16
+
+
+Rendering C:/working/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+  [4;35;1mUser Columns (0.003000)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mGrammar Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#new (for 127.0.0.1 at 2009-10-19 21:03:35) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"new", "controller"=>"grammar"}
+  [4;35;1mGrammar Load (0.000000)[0m   [0mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+  [4;35;1mRule Columns (0.005000)[0m   [0mSHOW FIELDS FROM rules[0m
+Rendering  within layouts/mainlayout
+Rendering grammar/new
+Rendered grammar/_form (0.08000)
+Completed in 0.10600 (9 reqs/sec) | Rendering: 0.08900 (83%) | DB: 0.01100 (10%) | 200 OK [http://www.callahat.net/grammar/new]
+  [4;36;1mUser Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.002000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 21:03:40) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.000000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+  [4;36;1mRule Load (0.001000)[0m   [0;1mSELECT * FROM rules WHERE (rules.grammar_id = 11) [0m
+  [4;35;1mRule Columns (0.005000)[0m   [0mSHOW FIELDS FROM rules[0m
+Completed in 0.03300 (30 reqs/sec) | Rendering: 0.02300 (69%) | DB: 0.01200 (36%) | 200 OK [http://www.callahat.net/grammar/workpad]
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.003000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 21:05:03) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.001000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.000000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+  [4;36;1mRule Load (0.000000)[0m   [0;1mSELECT * FROM rules WHERE (rules.grammar_id = 11) [0m
+  [4;35;1mRule Columns (0.003000)[0m   [0mSHOW FIELDS FROM rules[0m
+Completed in 0.02200 (45 reqs/sec) | Rendering: 0.01500 (68%) | DB: 0.01000 (45%) | 200 OK [http://www.callahat.net/grammar/workpad]
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.003000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 21:09:36) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.000000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+  [4;36;1mRule Load (0.001000)[0m   [0;1mSELECT * FROM rules WHERE (rules.grammar_id = 11) [0m
+  [4;35;1mRule Columns (0.003000)[0m   [0mSHOW FIELDS FROM rules[0m
+Completed in 0.02500 (39 reqs/sec) | Rendering: 0.01700 (68%) | DB: 0.01000 (39%) | 200 OK [http://www.callahat.net/grammar/workpad]
+  [4;36;1mUser Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.002000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 21:12:03) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.000000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+  [4;36;1mRule Load (0.000000)[0m   [0;1mSELECT * FROM rules WHERE (rules.grammar_id = 11) [0m
+  [4;35;1mRule Columns (0.002000)[0m   [0mSHOW FIELDS FROM rules[0m
+Completed in 0.02100 (47 reqs/sec) | Rendering: 0.01500 (71%) | DB: 0.00600 (28%) | 200 OK [http://www.callahat.net/grammar/workpad]
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.003000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 21:12:38) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.001000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.001000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+  [4;36;1mRule Load (0.000000)[0m   [0;1mSELECT * FROM rules WHERE (rules.grammar_id = 11) [0m
+  [4;35;1mRule Columns (0.003000)[0m   [0mSHOW FIELDS FROM rules[0m
+Completed in 0.02600 (38 reqs/sec) | Rendering: 0.01900 (73%) | DB: 0.01100 (42%) | 200 OK [http://www.callahat.net/grammar/workpad]
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.003000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 21:14:18) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.001000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+  [4;36;1mRule Load (0.000000)[0m   [0;1mSELECT * FROM rules WHERE (rules.grammar_id = 11) [0m
+  [4;35;1mRule Columns (0.003000)[0m   [0mSHOW FIELDS FROM rules[0m
+Completed in 0.02700 (37 reqs/sec) | Rendering: 0.02000 (74%) | DB: 0.01000 (37%) | 200 OK [http://www.callahat.net/grammar/workpad]
+  [4;36;1mUser Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.003000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 21:15:19) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.001000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.000000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+  [4;36;1mRule Load (0.001000)[0m   [0;1mSELECT * FROM rules WHERE (rules.grammar_id = 11) [0m
+  [4;35;1mRule Columns (0.003000)[0m   [0mSHOW FIELDS FROM rules[0m
+Completed in 0.02600 (38 reqs/sec) | Rendering: 0.01800 (69%) | DB: 0.01200 (46%) | 200 OK [http://www.callahat.net/grammar/workpad]
+  [4;36;1mUser Columns (0.002000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.003000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 21:16:03) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.001000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+  [4;36;1mRule Load (0.000000)[0m   [0;1mSELECT * FROM rules WHERE (rules.grammar_id = 11) [0m
+  [4;35;1mRule Columns (0.002000)[0m   [0mSHOW FIELDS FROM rules[0m
+Completed in 0.02100 (47 reqs/sec) | Rendering: 0.01500 (71%) | DB: 0.00800 (38%) | 200 OK [http://www.callahat.net/grammar/workpad]
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.003000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 21:16:06) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.001000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.000000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+  [4;36;1mRule Load (0.000000)[0m   [0;1mSELECT * FROM rules WHERE (rules.grammar_id = 11) [0m
+  [4;35;1mRule Columns (0.003000)[0m   [0mSHOW FIELDS FROM rules[0m
+Completed in 0.02500 (40 reqs/sec) | Rendering: 0.01800 (71%) | DB: 0.01000 (40%) | 200 OK [http://www.callahat.net/grammar/workpad]
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.003000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 21:16:45) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.000000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.001000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+  [4;36;1mRule Load (0.000000)[0m   [0;1mSELECT * FROM rules WHERE (rules.grammar_id = 11) [0m
+  [4;35;1mRule Columns (0.004000)[0m   [0mSHOW FIELDS FROM rules[0m
+Completed in 0.03000 (33 reqs/sec) | Rendering: 0.02100 (69%) | DB: 0.01100 (36%) | 200 OK [http://www.callahat.net/grammar/workpad]
+  [4;36;1mUser Columns (0.003000)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mGrammar Columns (0.003000)[0m   [0mSHOW FIELDS FROM grammars[0m
+
+
+Processing GrammarController#workpad (for 127.0.0.1 at 2009-10-19 21:16:57) [GET]
+  Session ID: 80bda4aa3766fabd78d1fc815eeb09bc
+  Parameters: {"action"=>"workpad", "controller"=>"grammar"}
+  [4;36;1mGrammar Load (0.001000)[0m   [0;1mSELECT * FROM grammars WHERE (user_id = 1 and version_type = 1) [0m
+  [4;35;1mGrammar Load (0.001000)[0m   [0mSELECT * FROM grammars WHERE (public = true and user_id != 1 and version_type = 1) [0m
+Rendering  within layouts/mainlayout
+Rendering grammar/workpad
+  [4;36;1mRule Load (0.000000)[0m   [0;1mSELECT * FROM rules WHERE (rules.grammar_id = 11) [0m
+  [4;35;1mRule Columns (0.002000)[0m   [0mSHOW FIELDS FROM rules[0m
+Completed in 0.10600 (9 reqs/sec) | Rendering: 0.10000 (94%) | DB: 0.01000 (9%) | 200 OK [http://www.callahat.net/grammar/workpad]

@@ -11,6 +11,10 @@ class GrammarController < ApplicationController
   end
 
   def workpad
+    @cfg={:start => 'initial rule', :string => 'string to match/translate', :result => 'result goes here'}
+	@start = 'init rule'
+	@string = 'tx this string'
+	@result = 'res'
   end
 
   def choose_grammar
@@ -111,6 +115,7 @@ class GrammarController < ApplicationController
 		session[:current_grammar] = @grammar
 	    redirect_to :action => 'my_grammars'
 	  else
+#revisit to enforce RULE NAMES USING ONLY LETTERS, CHARACTERS, and the UNDERSCORE. JUST HAVE A FAIL SCAN THROUGH ALL RULE ERRORS and ADD TO THE GRAMMAR ERRORS. AT RUNTIME, VERIFY THAT ALL RULES REFERENCED IN RULES OF A GRAMMAR HAVE AT LEAST ONE ENTRY FOR THE GRAMMAR. OTHERWISE THE ENGINE COULD CRASH OUT. THAT OR UPDATE THE ENGINE.
 	    @grammar.errors.add("","Rule names and patterns cannot be null")
 		session[:current_grammar] = @grammar
 	    render :action => 'edit'
