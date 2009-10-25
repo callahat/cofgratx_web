@@ -84,9 +84,14 @@ ul.form li {
 }
 ul.form_wide {
   background-color:inherit;
+  width:90%;
+  text-align:right;
 }
 ul.form_wide li {
   display:block;
+}
+ul.form_wide li input[type=text]{
+  width:80%;
 }
 
 input[type=checkbox]{

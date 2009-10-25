@@ -11,12 +11,30 @@ class GrammarController < ApplicationController
   end
 
   def workpad
-    @cfg={:start => 'initial rule', :string => 'string to match/translate', :result => 'result goes here'}
-	@start = 'init rule'
-	@string = 'tx this string'
-	@result = 'res'
+    unless params[:commit] #initial pageview
+      @cfg={:start => 'initial rule', :string => 'string to match/translate', :result => 'result goes here'}
+	  @start = session[:current_grammar].rules.first.name
+	  @string = ''
+	  @result = 'result'
+	else #user hit translate button
+	  @start = params[:start]
+	  @string = params[:string]
+	  @result = ""
+	  errors,message = session[:cfg].checkRules(@start)
+	  if errors
+	    flash[:notice] = message
+      else
+	    oldstring, newstring = session[:cfg].txString(@start, @string)
+	    if oldstring == -1
+	      flash[:notice] = "Failed to match given string for this grammar, with given starting rule."
+        else
+	      flash[:notice] = "String matches given grammar, with given starting rule"
+	      @result = newstring
+	    end
+	  end
+	end
   end
-
+  
   def choose_grammar
     @grammar = Grammar.find(params[:id])
 	if @grammar.nil?
@@ -24,6 +42,16 @@ class GrammarController < ApplicationController
 	elsif @grammar.public || (session[:user] && @grammar.user_id == session[:user][:id])
 	  flash[:notice] = "Grammar \"" + @grammar.name + "\" loaded."
 	  session[:current_grammar] = @grammar
+	  
+	  #parse grammar into the CFG object
+	  cfg = CFG.new
+	  @grammar.rules.each{|r|
+	    pattern = r.pattern
+	    cfg.addRule(r.name, r.to_CFG_pat_a, r.to_CFG_tx_a)
+	  }
+	  #print "CFG:" + cfg.inspect.to_s
+	  
+	  session[:cfg] = cfg.dup
 	elsif !@grammar.public && session[:user].nil?
 	  flash[:notice] = "Users not signed in may only use public grammars"
 	else
@@ -145,13 +173,15 @@ protected
   end
   
   def save_rules(ra, g)
-    all_saved = true;
+    all_saved = true
     ra.each{ |r|
 	  unless r.name == '' && r.pattern == ''
 	    r.grammar_id = g.id
 		print "\nname pat tx:" + r.name + r.pattern + r.translation + ":"
-		if !r.save
+		
+		if !r.save || !(msg = CFG.ruleInvalid(r.name, r.pattern, r.translation)).nil?
 		  print "\nFailed to save rule \"" + r.name + "\"" if !r.save
+		  g.errors.add("",msg)
 		  all_saved = false
 		end
 	  end

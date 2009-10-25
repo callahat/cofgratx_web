@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
     false
   end
 
-  protected
+protected
 
   def self.sha1(pass)
     Digest::SHA1.hexdigest("4535--#{pass}--9878")
