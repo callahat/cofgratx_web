@@ -1,0 +1,8 @@
+<h1>Update User Information</h1>
+
+<p>Note: Username cannot be changed</p>
+
+<% form_tag :action => 'update', :id => @user do %>
+  <%= render :partial => 'form' %>
+  <ul class="form"><li><%= submit_tag 'Update' %></li></ul>
+<% end %>

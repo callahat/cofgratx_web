@@ -1,0 +1,13 @@
+<div class="grammar_side_bar">
+  <%= side_bar(@grammars, [:mine]) %>
+</div>
+<div class="grammar_yield">
+  <h1>Create grammar</h1>
+  <p>Please see the "help" tab for information on rule syntax.</p>
+  
+  <% form_tag :action => 'create' do %>
+    <%= render :partial => 'form' %>
+    <ul class="form"><li><%= submit_tag 'Create' %></li></ul>
+  <% end %>
+  
+</div>
