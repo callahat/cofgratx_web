@@ -4,7 +4,7 @@
 
 <ul class="form">
   <li><label for="grammar_name">Name:</label>
-      <%= text_field 'grammar', 'name', :disabled => (controller.action_name == 'edit') %></li>
+      <%= text_field 'grammar', 'name' %></li>
   <li><label for="grammar_name">Description:</label>
       <%= text_field 'grammar', 'desc' %></li>
   <li><label for="grammar_public">Public:</label>
@@ -27,8 +27,8 @@ function addRuleRow(){
   var n = row.insertCell(0);
   var p = row.insertCell(1);
   var tx = row.insertCell(2);
-  n.innerHTML = "<%= text_field('rule', 'name', 'index' => 'INDEX', 'class' => 'fit').gsub(/\"/,"\\\"") %>".replace(/INDEX/g, size);
-  p.innerHTML = "<%= text_field('rule', 'pattern', 'index' => 'INDEX', 'class' => 'fit').gsub(/\"/,"\\\"") %>".replace(/INDEX/g, size);
-  tx.innerHTML = "<%= text_field('rule', 'translation', 'index' => 'INDEX', 'class' => 'fit').gsub(/\"/,"\\\"") %>".replace(/INDEX/g, size);
+  n.innerHTML = "<%= text_field('rule', 'name', 'index' => 'INDEX', 'class' => 'fit rule').gsub(/\"/,"\\\"") %>".replace(/INDEX/g, size);
+  p.innerHTML = "<%= text_field('rule', 'pattern', 'index' => 'INDEX', 'class' => 'fit rule').gsub(/\"/,"\\\"") %>".replace(/INDEX/g, size);
+  tx.innerHTML = "<%= text_field('rule', 'translation', 'index' => 'INDEX', 'class' => 'fit rule').gsub(/\"/,"\\\"") %>".replace(/INDEX/g, size);
 }
 </script>

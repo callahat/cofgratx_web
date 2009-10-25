@@ -11,6 +11,7 @@ class GrammarController < ApplicationController
   end
 
   def workpad
+    return if session[:current_grammar].nil?
     unless params[:commit] #initial pageview
       @cfg={:start => 'initial rule', :string => 'string to match/translate', :result => 'result goes here'}
 	  @start = session[:current_grammar].rules.first.name
@@ -36,7 +37,7 @@ class GrammarController < ApplicationController
   end
   
   def choose_grammar
-    @grammar = Grammar.find(params[:id])
+    @grammar = Grammar.find(:first, :conditions => ['id = ?', params[:id]])
 	if @grammar.nil?
 	  flash[:notice] = "Error: The grammar selected was not found."
 	elsif @grammar.public || (session[:user] && @grammar.user_id == session[:user][:id])
@@ -143,7 +144,6 @@ class GrammarController < ApplicationController
 		session[:current_grammar] = @grammar
 	    redirect_to :action => 'my_grammars'
 	  else
-#revisit to enforce RULE NAMES USING ONLY LETTERS, CHARACTERS, and the UNDERSCORE. JUST HAVE A FAIL SCAN THROUGH ALL RULE ERRORS and ADD TO THE GRAMMAR ERRORS. AT RUNTIME, VERIFY THAT ALL RULES REFERENCED IN RULES OF A GRAMMAR HAVE AT LEAST ONE ENTRY FOR THE GRAMMAR. OTHERWISE THE ENGINE COULD CRASH OUT. THAT OR UPDATE THE ENGINE.
 	    @grammar.errors.add("","Rule names and patterns cannot be null")
 		session[:current_grammar] = @grammar
 	    render :action => 'edit'
@@ -154,6 +154,9 @@ class GrammarController < ApplicationController
   def destroy
     @grammar = Grammar.find(session[:current_grammar][:id])
 	@grammar.rules.each{|r| r.destroy }
+	
+	expire_fragments(@grammar.id)
+	
 	@grammar.destroy
 	session[:current_grammar] = nil
 	flash[:notice] = @grammar.name + " destroyed"
@@ -163,21 +166,24 @@ class GrammarController < ApplicationController
 protected
   def setup_grammars_hash
     @grammars = {}
+	@grammars[:public] = Grammar.find(:all, :conditions => ['public = true and version_type = 1'])
     if session[:user].nil?
 	  @grammars[:mine]   = []
-	  @grammars[:public] = Grammar.find(:all, :conditions => ['public = true and version_type = 1'])
 	else
 	  @grammars[:mine]   = Grammar.find(:all, :conditions => ['user_id = ? and version_type = 1', session[:user].id])
-	  @grammars[:public] = Grammar.find(:all, :conditions => ['public = true and user_id != ? and version_type = 1', session[:user].id])
     end
   end
   
   def save_rules(ra, g)
+    #print "\n******************Saving rules*****************\n"
+	#0.upto(ra.size-1){|i|
+	#  p ra[i].name
+	#}
     all_saved = true
     ra.each{ |r|
 	  unless r.name == '' && r.pattern == ''
 	    r.grammar_id = g.id
-		print "\nname pat tx:" + r.name + r.pattern + r.translation + ":"
+	#	print "\nname pat tx:" + r.name + r.pattern + r.translation + ":"
 		
 		if !r.save || !(msg = CFG.ruleInvalid(r.name, r.pattern, r.translation)).nil?
 		  print "\nFailed to save rule \"" + r.name + "\"" if !r.save
@@ -186,18 +192,26 @@ protected
 		end
 	  end
 	}
+	expire_fragments(g.id)
     all_saved
   end
   
   def gen_rule_array(rule_hash)
-    ra = []
-    rule_hash.sort.each { |r|
+    ra = Array.new(rule_hash.size)
+    rule_hash.each { |r|
 	  if r[1].nil?
-	    ra << Rule.new
+	    ra[r[0].to_i] = Rule.new
 	  else
-	    ra << Rule.new(r[1])
+	    ra[r[0].to_i] = Rule.new(r[1])
 	  end
 	}
 	return ra
+  end
+  
+protected
+  def expire_fragments(gid)
+   expire_fragment(:controller => "grammar", :action => "workpad", :cgid => gid)
+   expire_fragment(:controller => "grammar", :action => "my_grammars", :cgid => gid)
+   expire_fragment(:controller => "grammar", :action => "public_grammars", :cgid => gid)
   end
 end

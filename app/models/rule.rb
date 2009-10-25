@@ -35,9 +35,9 @@ protected
   def parse_input(string)
     a = []
 	
-	 #this regexp pulls all valid evalable parts into $2, and does not pull in stuff unlawfully escaped
-	print "\nstring: " + string
-    while (string =~ /(.*?(\[.*?\]|\".*?\"|\/.*?\/),?\s*)/) do
+	#this regexp pulls all valid evalable parts into $2, and does not pull in stuff unlawfully escaped
+	#print "\nstring: " + string
+    while (string =~ /(.*?(\[.*?\]|\".*?\"|\/.*?\/|\d+|:[a-z]),?\s*)/) do
 	  keeper = $2.dup
 	  kipple = $1.dup
 	  if ($2 =~ /\[(.*?)\]/)
@@ -49,5 +49,4 @@ protected
 	end
 	return a
   end
-
 end

@@ -6,7 +6,7 @@
   <% if session[:current_grammar].nil? %>
     Please choose a grammar from the left.
   <% else %>
-    <%= session[:current_grammar].name %> is the current grammar.
+    <%= session[:current_grammar].name %> <% if session[:current_grammar].public%>(public)<% else %>(private)<%end%> is the current grammar.
 
 	<% form_tag :action => 'workpad' do %>
 	  <ul class="form_wide">
@@ -19,13 +19,11 @@
 	  </ul>
       <ul class="form"><li><%= submit_tag 'Evaluate/Translate' %></li></ul>
     <% end %>
-	
-	
-	
+
     <p>Rules for the current grammar:</p>
-    <% cache :action_tag => session[:current_grammar].name do %>
-  
+    <% cache :cgid => session[:current_grammar][:id] do %>
+      <%= print_rules(session[:current_grammar]) %>
     <% end %>
-    <%= print_rules(session[:current_grammar]) %>
+
   <% end %>
 </div>

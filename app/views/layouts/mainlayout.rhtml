@@ -12,9 +12,9 @@
   <div class="navigation">
     <ul class="main_tabs">
 	  <%= nav_tab("Home","default","home","") %>
-	  <%= nav_tab("Grammars","grammar","workpad","") %>
+	  <%= nav_tab("Grammars","grammar","workpad","my_grammars,public_grammars,help,new,edit,create,update") %>
 	 <% if session[:user] == nil %>
-	  <%= nav_tab("Login","user","login","") %>
+	  <%= nav_tab("Login","user","login","verify") %>
 	  <%= nav_tab("Register","user","new","create") %>
 	 <% else %>
 	  <%= nav_tab("Logout","user","logout","") %>

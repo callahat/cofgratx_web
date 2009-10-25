@@ -55,10 +55,10 @@ module GrammarHelper
   end
 protected
   def table_header
-  return "<table id=\"rule_table\"><tr>\n" +
-	     "  <th class=\"name\">Name</th>\n" +
-		 "  <th class=\"pattern\">Pattern</th>\n" +
-		 "  <th class=\"translation\">Translation</th>\n" +
-		 "</tr>\n"
+    return "<table id=\"rule_table\"><tr>\n" +
+	       "  <th class=\"name\">Name</th>\n" +
+		   "  <th class=\"pattern\">Pattern</th>\n" +
+		   "  <th class=\"translation\">Translation</th>\n" +
+		   "</tr>\n"
   end
 end
