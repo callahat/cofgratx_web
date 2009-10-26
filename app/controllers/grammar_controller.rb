@@ -59,7 +59,7 @@ class GrammarController < ApplicationController
 	  flash[:notice] = "Users may not use nonpublic grammars that they do not own"
 	end
 	
-	redirect_to :back
+	redirect_to(:back) rescue redirect_to(:action => 'workpad')
   end
 
   def my_grammars
