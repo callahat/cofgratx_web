@@ -37,11 +37,12 @@ protected
 	
 	#this regexp pulls all valid evalable parts into $2, and does not pull in stuff unlawfully escaped
 	#print "\nstring: " + string
-    while (string =~ /(.*?(\[.*?\]|\".*?\"|\/.*?\/|\d+|:[a-z]),?\s*)/) do
+    while (string =~ /(.*?(\/.*?\/|\[.*?\]|\".*?\"|\d+|:[a-z])(,\s*|\s*$))/) do
+
 	  keeper = $2.dup
 	  kipple = $1.dup
-	  if ($2 =~ /\[(.*?)\]/)
-	    a << parse_input($1)
+	  if (keeper =~ /^\[(.*?)\]$/)
+	    a << parse_input(keeper[1..-2])
       elsif keeper && keeper[-2..-2] != "\\" #having an escape character right before end quote could be bad.
 	    a << Rails.module_eval(keeper) #dangerous without the regexp. even so, still dangerous
       end
