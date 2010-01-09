@@ -37,7 +37,6 @@ protected
   end
   
   def initialize_user
-    write_attribute "timestamp", Time.now
 	write_attribute "active", 0
 	write_attribute "reg_hash", self.class.sha1("1983-#{name}-#{timestamp}-")
   end
