@@ -3,10 +3,10 @@
 </div>
 <div class="grammar_yield">
   <h1>Workbench</h1>
-  <% if session[:current_grammar].nil? %>
+  <% if @current_grammar.nil? %>
     Please choose a grammar from the left.
   <% else %>
-    <%= session[:current_grammar].name %> <% if session[:current_grammar].public%>(public)<% else %>(private)<%end%> is the current grammar.
+    <%= @current_grammar.name %> <% if @current_grammar.public%>(public)<% else %>(private)<%end%> is the current grammar.
 
 	<% form_tag :action => 'workpad' do %>
 	  <ul class="form_wide">
@@ -21,8 +21,8 @@
     <% end %>
 
     <p>Rules for the current grammar:</p>
-    <% cache :cgid => session[:current_grammar][:id] do %>
-      <%= print_rules(session[:current_grammar]) %>
+    <% cache :cgid => @current_grammar.id do %>
+      <%= print_rules(@current_grammar) %>
     <% end %>
 
   <% end %>

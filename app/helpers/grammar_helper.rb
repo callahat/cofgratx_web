@@ -17,7 +17,7 @@ module GrammarHelper
   
   def side_bar_link(grammar)
     li = "<li class=\"grammar_side_bar"
-    if (session[:current_grammar] && session[:current_grammar].id == grammar.id)
+    if (session[:current_grammar_id] == grammar.id)
 	  li += " current_tab\">" + grammar.name
 	else
 	  li += "\">" + link_to(span_wrap("&nbsp;"+grammar.name), :action => 'choose_grammar', :id => grammar.id)
