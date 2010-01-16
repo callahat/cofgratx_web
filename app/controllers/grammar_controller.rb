@@ -15,7 +15,7 @@ class GrammarController < ApplicationController
     return if @current_grammar.nil?
     unless params[:commit] #initial pageview
       @cfg={:start => 'initial rule', :string => 'string to match/translate', :result => 'result goes here'}
-	  @start = @current_grammar.rules.first.name
+	  @start = @current_grammar.rules.first.name unless @current_grammar.rules.first.nil?
 	  @string = ''
 	  @result = 'result'
 	else #user hit translate button
