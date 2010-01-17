@@ -37,14 +37,15 @@ protected
   end
   
   def initialize_user
-    write_attribute "timestamp", Time.now
 	write_attribute "active", 0
-	write_attribute "reg_hash", self.class.sha1("1983-#{name}-#{timestamp}-")
+	write_attribute "reg_hash", self.class.sha1("1983-#{name}-#{Time.now}-")
   end
   
   def send_reg_mail
-    subject = "COFGRATX registration email"
-    Emailer.deliver_reg_mail(self.email, subject, self.name, self.reg_hash)
+    unless $bulk_loading
+      subject = "COFGRATX registration email"
+      Emailer.deliver_reg_mail(self.email, subject, self.name, self.reg_hash)
+	end
   end
 
   validates_uniqueness_of :name, :on => :create

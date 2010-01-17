@@ -25,8 +25,7 @@ class UserController < ApplicationController
 	elsif @user.permission.active != 0
 	  flash[:notice] = "We're sorry, but we are unable to activate your account"
 	elsif (@user.reg_hash == params[:foo]) && @user.permission.active == 0
-	  @user.permission.active = 1
-	  @user.permission.update
+	  @user.permission.update_attributes(:active => 1)
 	  flash[:notice] = "Thank you, \"" + @user.name + "\" has been activated. You may sign in and use the application."
 	else
 	  flash[:notice] = "We're sorry, we are unable to activate your account"

@@ -5,7 +5,7 @@
   <h1>Edit grammar</h1>
   <p>Please see the "help" tab for information on rule syntax.</p>
   
-  <% form_tag :action => 'update', :id => session[:current_grammar] do %>
+  <% form_tag :action => 'update', :id => @current_grammar do %>
     <%= render :partial => 'form' %>
     <ul class="form"><li><%= submit_tag 'Update' %></li></ul>
   <% end %>
