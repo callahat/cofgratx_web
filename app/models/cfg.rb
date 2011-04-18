@@ -96,8 +96,8 @@ class CFG
         flag += "Translation arrays must be of one or more String and/or Fixnum (integer) and/or repetition array\n" + t.class.to_s
       end
     }
-	return nil if flag == ""
-	return flag
+    return nil if flag == ""
+    return flag
   end
   
   def clearRule(s)
@@ -295,18 +295,18 @@ class CFG
 
   def checkRules(initial)
     return true, "Initial rule \"" + initial + "\" not defined in grammar" if @rules[initial.to_sym].nil?
-	defined = []
-	used = []
-	@rules.keys.each{|k|
-	  defined << k.to_s
-	  @rules[k].each{|pair|
-	    pair[0].each{|p|
-	      used << p if p.class == String
-		}
+    defined = []
+    used = []
+    @rules.keys.each{|k|
+      defined << k.to_s
+      @rules[k].each{|pair|
+        pair[0].each{|p|
+          used << p if p.class == String
+        }
       }
-	}
-	difference = used - defined
+    }
+    difference = used - defined
     return true, "Not all referenced rules are defined in grammar: " + difference.join(", ") unless difference == []
-	return false, "No errors with referenced rules"
+    return false, "No errors with referenced rules"
   end  
 end

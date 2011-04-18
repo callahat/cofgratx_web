@@ -6,7 +6,7 @@ class Grammar < ActiveRecord::Base
   before_create :initial
   
   def initial
-	write_attribute "version",1 if version.nil?
-	write_attribute "version_type",1
+    write_attribute "version",1 if version.nil?
+    write_attribute "version_type",1
   end
 end

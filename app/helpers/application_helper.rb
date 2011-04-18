@@ -7,11 +7,11 @@ module ApplicationHelper
   def nav_tab(name, c, a, alts)
     li = "<li class=\"nav_link"
     if controller.controller_name == c && (a + alts).index(controller.action_name)
-	  li += " current_tab\">" + span_wrap(name)
-	else
-	  li += "\">" + link_to(span_wrap(name), :controller => c, :action => a)
-	end
-	li += "</li>"
-	return li
+      li += " current_tab\">" + span_wrap(name)
+    else
+      li += "\">" + link_to(span_wrap(name), :controller => c, :action => a)
+    end
+    li += "</li>"
+    return li
   end
 end

@@ -4,8 +4,8 @@ class Emailer < ActionMailer::Base
       @recipients = recipient
       @from = 'noreply@callahat.net'
       @sent_on = sent_at
-   	  @body["username"] = username
-	  @body["reg_hash"] = reg_hash
+      @body["username"] = username
+      @body["reg_hash"] = reg_hash
       @headers = {}
    end
 end
