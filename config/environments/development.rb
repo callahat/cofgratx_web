@@ -12,7 +12,7 @@ Cofgratx::Application.configure do
   # Show full error reports and disable caching
   config.consider_all_requests_local = true
   config.action_controller.perform_caching             = true
-  config.action_controller.cache_store                 = :file_store, RAILS_ROOT+"/tmp/cache/"
+  config.action_controller.cache_store                 = :file_store, Rails.root.to_s+"/tmp/cache/"
   config.action_view.debug_rjs                         = true
 
   # Don't care if the mailer can't send

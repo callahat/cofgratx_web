@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Rails305::Application.load_tasks
+Cofgratx::Application.load_tasks
