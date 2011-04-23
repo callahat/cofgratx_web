@@ -1,5 +1,5 @@
 <div class="grammar_side_bar">
-  <%= side_bar(@grammars) %>
+  <%= raw side_bar(@grammars) %>
 </div>
 <div class="grammar_yield">
   <h1>Workbench</h1>
@@ -8,7 +8,7 @@
   <% else %>
     <%= @current_grammar.name %> <% if @current_grammar.public%>(public)<% else %>(private)<%end%> is the current grammar.
 
-	<% form_tag :action => 'workpad' do %>
+	<%= form_tag :action => 'workpad' do %>
 	  <ul class="form_wide">
       <li><label for="start">Initial Rule:</label>
         <input id="start" type="text" value="<%= @start %>" size="30" name="start" class="rule"/></li>
@@ -22,7 +22,7 @@
 
     <p>Rules for the current grammar:</p>
     <% cache :cgid => @current_grammar.id do %>
-      <%= print_rules(@current_grammar) %>
+      <%= raw print_rules(@current_grammar) %>
     <% end %>
 
   <% end %>

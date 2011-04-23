@@ -1,8 +1,8 @@
 <div class="grammar_side_bar">
   <ul>
-    <li class="grammar_side_bar"><%= link_to(span_wrap("New Grammar"), :action => 'new') %></li>
+    <li class="grammar_side_bar"><%= link_to(raw(span_wrap("New Grammar")), :action => 'new') %></li>
   </ul>
-  <%= side_bar(@grammars, [:mine]) %>
+  <%= raw side_bar(@grammars, [:mine]) %>
 </div>
 <div class="grammar_yield">
   <h1>My Grammars</h1>
@@ -12,7 +12,7 @@
     <% cache :cgid => @current_grammar.id do %>
       "<%= @current_grammar.name %>" <% if @current_grammar.public%>(public)<% else %>(private)<%end%> is the current grammar. It contains <%= @current_grammar.rules.size %> rules, listed below.
 	  
-      <%= print_rules(@current_grammar) %>
+      <%= raw print_rules(@current_grammar) %>
 
 	  <ul class="form"><li><%= link_to 'Edit', :action => 'edit', :id => @current_grammar %></li></ul>
 	  <ul class="form"><li><%= link_to 'Destroy', {:action => 'destroy', :id => @current_grammar}, :confirm => 'Are you sure?', :method => :post %></li></ul>

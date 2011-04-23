@@ -5,7 +5,7 @@ module GrammarHelper
     owners.each{|whose|
       grammar_hash[whose].each{|grammar|
         lis[whose] += side_bar_link(grammar) + "\n"
-        }
+      }
     }
     
     lis[:mine] = "<li class=\"title\"><div>My Grammars</div></li>\n" + lis[:mine] if lis[:mine].length > 0
@@ -20,7 +20,7 @@ module GrammarHelper
     if (session[:current_grammar_id] == grammar.id)
       li += " current_tab\">" + grammar.name
     else
-      li += "\">" + link_to(span_wrap("&nbsp;"+grammar.name), :action => 'choose_grammar', :id => grammar.id)
+      li += "\">" + link_to( raw( span_wrap("&nbsp;"+grammar.name) ), :action => 'choose_grammar', :id => grammar.id)
     end
     return li + "</li>"
   end

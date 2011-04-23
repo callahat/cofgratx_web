@@ -2,7 +2,7 @@
 
 <p>Note: You will need to click the link in the confirmation email to activate this account</p>
 
-<% form_tag :action => 'create', :id => @user do %>
+<%= form_tag :action => 'create', :id => @user do %>
   <%= render :partial => 'form' %>
   <ul class="form"><li><%= submit_tag 'Create' %></li></ul>
 <% end %>

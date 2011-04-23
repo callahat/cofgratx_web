@@ -11,21 +11,21 @@
 <% cache :action_suffix => "nav" + session[:user].nil?.to_s do %>
   <div class="navigation">
     <ul class="main_tabs">
-	  <%= nav_tab("Home","default","home","") %>
-	  <%= nav_tab("Grammars","grammar","workpad","my_grammars,public_grammars,help,new,edit,create,update") %>
+	  <%= raw nav_tab("Home","default","home","") %>
+	  <%= raw nav_tab("Grammars","grammar","workpad","my_grammars,public_grammars,help,new,edit,create,update") %>
 	 <% if session[:user] == nil %>
-	  <%= nav_tab("Login","user","login","verify") %>
-	  <%= nav_tab("Register","user","new","create") %>
+	  <%= raw nav_tab("Login","user","login","verify") %>
+	  <%= raw nav_tab("Register","user","new","create") %>
 	 <% else %>
-	  <%= nav_tab("Logout","user","logout","") %>
+	  <%= raw nav_tab("Logout","user","logout","") %>
 	 <% end %>
 	</ul>
 	<% if controller.controller_name == "grammar" %>
 	<ul class="sub_tabs" id="grammars_tab">
-	  <%= nav_tab("Workpad","grammar","workpad","") %>
-	  <%= nav_tab("My Grammars","grammar","my_grammars","") %>
-	  <%= nav_tab("Public Grammars","grammar","public_grammars","") %>
-	  <%= nav_tab("Help","grammar","help","") %>
+	  <%= raw nav_tab("Workpad","grammar","workpad","") %>
+	  <%= raw nav_tab("My Grammars","grammar","my_grammars","") %>
+	  <%= raw nav_tab("Public Grammars","grammar","public_grammars","") %>
+	  <%= raw nav_tab("Help","grammar","help","") %>
 	</ul>
 	<% end %>
   </div>
