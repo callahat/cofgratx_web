@@ -1,10 +1,10 @@
 #define class CFG
-class CFG 
+class CFG
   def initialize()
     @rules = {}
     @transform = false
   end
-  
+
   #addRule - Each Symbol may have more than one decomposition rule. Note that
   #          the rules will be traversed in the order they are entered until
   #          a match is found.
@@ -17,58 +17,27 @@ class CFG
   #     to perform. Elements of the transorm array are as follows
   #        n     -Integer. The nth evaluated part of the decomposition array,
   #               cannot be greater than the number of elements in the decomposition array
-  #       "s"    -Arbitrary string s 
+  #       "s"    -Arbitrary string s
   #       array  - containts symbol. "s" and n, where n is the starting offset to the matching elements
-  #                of the decomposition array. 
+  #                of the decomposition array.
   #                the symbol is one character in length, optional, and denotes which repetition
-  #                at which to start. If left out, the first repetition (denoted by ':a') will 
+  #                at which to start. If left out, the first repetition (denoted by ':a') will
   #                be assumed.
   #          ie. rule: [/a/,/b/,[/,/]]
   #              tx:   ["a", [:b, " foo", 2]]
   #      on sentance:  "ab,ab,ab"
   #      translates to: "a foob foob"
-  #                
+  #
   def addRule (s, d, t)
-    #if s.class != String
-    #  print "Nonterminal must be string. You entered a " + s.class.to_s + "\n"
-    #  return nil
-    #end
-    #d.each{|r|
-    #  if r.class == Array
-    #    r.each{|ra|
-    #      if ra.class != Regexp && ra.class != String
-    #        print "Repetition marker arrays must consist of one or more String and/or Regexp"
-    #        return nil
-    #      end
-    #    }
-    #  elsif r.class != Regexp && r.class != String
-    #    print "Rule arrays must be of one or more String and/or Regexp\n"
-    #    return nil
-    #  end
-    #}
-    #t.each{|r|
-    #  if r.class == Array
-    #    r.each{|ra|
-    #      if ra.class != Fixnum && ra.class != String && (ra.class != Symbol && r.index(ra) != 0)
-    #        print "Repetition translation arrays must consist of one or more String and/or Regexp or a symbol :[a-z]" + ra.class.to_s
-    #        return nil
-    #      end
-    #    }
-    #  elsif r.class != Fixnum && r.class != String && r.class != Array
-    #    print "Translation arrays must be of one or more String and/or Fixnum (integer) and/or repetition array\n" + t.class.to_s
-    #    return nil
-    #  end
-    #}
-	
-	invalidMsg = CFG.ruleInvalid(s, d, t)
-	unless invalidMsg.nil?
+    invalidMsg = CFG.ruleInvalid(s, d, t)
+    unless invalidMsg.nil?
       print "Rule invalid:\n" + invalidMsg
     else
       @rules[s.to_sym] = [] unless @rules[s.to_sym]
       @rules[s.to_sym].push([d,t])
-	end
+    end
   end
-  
+
   def self.ruleInvalid(s, d, t)
     flag = ""
     if s.class != String
@@ -92,14 +61,14 @@ class CFG
             flag += "Repetition translation arrays must consist of one or more String and/or Regexp or a symbol :[a-z]" + ra.class.to_s
           end
         }
-      elsif r.class != Fixnum && r.class != String && r.class != Array
+      elsif r.class != Fixnum && r.class != String
         flag += "Translation arrays must be of one or more String and/or Fixnum (integer) and/or repetition array\n" + t.class.to_s
       end
     }
     return nil if flag == ""
     return flag
   end
-  
+
   def clearRule(s)
     @rules[s.to_sym].clear
     @rules.delete(s.to_sym)
@@ -108,7 +77,7 @@ class CFG
   def clear
     @rules = {}
   end
-  
+
   #pretty print of the rules
   def inspect
     @rules.each{|r|
@@ -117,7 +86,7 @@ class CFG
         }
       }
   end
-  
+
   #Kinda a debugging front end, allows lots levels of tracing to be dumped to screen, and option
   #to perform or not perform the translation
   def parseString(s, line, trace, transform)
@@ -132,7 +101,7 @@ class CFG
       print "\n\n\nNO match" + "." + sent.to_s + "." + line + ".\n"
     end
   end
-  
+
   #main API wrapper function
   def txString(s, line)
     @allgobbled = false
@@ -144,8 +113,8 @@ class CFG
       return -1,"Failed to match given string:" + line
     end
   end
-  
-  
+
+
   def parseSentance(s, line, trace)
   print s + ":" + @rules[s.to_sym].inspect +  "\n"  unless trace < 1
     @rules[s.to_sym].each{|r|
@@ -163,7 +132,7 @@ class CFG
     } unless @rules[s.to_sym].nil?
     return nil
   end
-  
+
   def parseRule(rule, tx, line, trace)
     print spacing(trace) + "Parsing a rule\'" + rule.to_s + "\' \'" + rule.length.to_s + "\'\n" unless trace < 1
     pairs = []
@@ -172,7 +141,7 @@ class CFG
     orig_rule = rule.dup
     rule_copy = rule.dup
     rep_count = 1
-    
+
     rule_copy.each{|r|
       rep_elem = nil
       print spacing(trace) + "terminal:" + r.to_s + " line: " + line + "\n"      unless trace < 1
@@ -189,7 +158,7 @@ class CFG
         pv = newpv = parseTerminal(r, line, trace)
         print spacing(trace) + "RPV:" + pv.to_s + "\n" unless trace < 1
       end
-       
+
       if pv
         pairs.push([r, newpv])
         terms += pv.to_s
@@ -216,7 +185,7 @@ class CFG
       end
     }
     print spacing(trace) + "AFTER\n"       unless trace < 1
-    
+
     print spacing(trace) + line + "\n"       unless trace < 1
 
     if @transform && !tx.empty?
@@ -224,7 +193,7 @@ class CFG
       print spacing(trace) + "pairs array size:" + pairs.size.to_s + "\n"    unless trace < 1
       print spacing(trace) + pairs.inspect + "\n"    unless trace < 1
       print spacing(trace) + "repetitions:" + rep_count.to_s + "\n"    unless trace < 1
-      
+
       new_terms = ""
 
       for i in 0..(tx.size-1) do
@@ -245,7 +214,7 @@ class CFG
             end
             print spacing(trace) + "aft tx j helper:" + new_terms + "\n"    unless trace < 1
           end
-        else 
+        else
           new_terms = translateHelper(tx[i], 0, new_terms, pairs, orig_rule.size, trace)
           print spacing(trace) + "aft tx helper:" + new_terms + "\n"    unless trace < 1
         end
@@ -257,7 +226,7 @@ class CFG
     print spacing(trace) + terms.inspect + "\n" unless trace < 1
     return terms, new_terms
   end
-  
+
   def translateHelper(tx, rep, new_terms, pairs, offset, trace)
     if tx.class == Fixnum
       if tx+offset*rep > pairs.size
@@ -274,7 +243,7 @@ class CFG
     end
     return new_terms
   end
-  
+
   def parseTerminal(t, line, trace)
     print spacing(trace) + "Parsing a terminal\n" unless trace < 1
     print spacing(trace) + "Index:" + line.index(t).to_s + " t:" + t.to_s + " line: "+ line + "\n" unless trace < 1
@@ -284,11 +253,11 @@ class CFG
       return nil
     end
   end
-  
+
   def spacing(trace)
     " "*(@sp - trace)*2
   end
-  
+
   def dumpRules
     return @rules
   end
@@ -308,5 +277,5 @@ class CFG
     difference = used - defined
     return true, "Not all referenced rules are defined in grammar: " + difference.join(", ") unless difference == []
     return false, "No errors with referenced rules"
-  end  
+  end
 end
