@@ -112,9 +112,56 @@ class CFGTest < ActiveSupport::TestCase
 
   #=====================================================================
   # checkRules
-  #Todo
+  test "checkRules - rule not defined" do
+    cfg = CFG.new
+    error, message = cfg.checkRules("test")
 
+    assert_equal true, error
+    assert_equal "Initial rule \"test\" not defined in grammar", message
+  end
 
+  test "checkRules - not all rules referenced exist" do
+    cfg = CFG.new
+    cfg.addRule("test", [ "different rule" ], [])
+    error, message = cfg.checkRules("test")
+
+    assert_equal true, error
+    assert_equal "Not all referenced rules are defined in grammar: different rule", message
+  end
+
+  test "checkRules - no errors" do
+    cfg = CFG.new
+    cfg.addRule("test", [ /test/ ], [])
+    error, message = cfg.checkRules("test")
+
+    assert_equal false, error
+    assert_equal "No errors with referenced rules", message
+  end
+
+  #=====================================================================
+  #parseTerminal
+
+  test "parseTerminal - terminal match" do
+    cfg = CFG.new
+    match = cfg.parseTerminal(/test/, "test and only cut the match", 0)
+    assert_equal "test", match
+
+    match = cfg.parseTerminal(/t.*?t the/, "test and only cut the match", 0)
+    assert_equal "test and only cut the", match
+  end
+
+  test "parseTerminal - terminal does not match" do
+    cfg = CFG.new
+    match = cfg.parseTerminal(/test/, "NOTHING!", 0)
+    assert match.nil?
+
+    match = cfg.parseTerminal(/t.*?t the/, "STILL NOTHING MATCHES", 0)
+    assert match.nil?
+  end
+
+  #=====================================================================
+  #translateHelper
+  #todo
 end
 
 
