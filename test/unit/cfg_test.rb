@@ -237,4 +237,14 @@ class CFGTest < ActiveSupport::TestCase
     assert_equal "ab rest of sentance", line
   end
 
+  #=====================================================================
+  #parseRule
+
+  test "parseRule - no match" do
+    cfg = CFG.new
+    cfg.addRule("Test", [/a/,/b/], [])
+    terms, new_terms = cfg.parseRule([/a/,/b/], [], "nothing", 0)
+    p terms
+    p new_terms
+  end
 end
