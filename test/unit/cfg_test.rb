@@ -239,12 +239,68 @@ class CFGTest < ActiveSupport::TestCase
 
   #=====================================================================
   #parseRule
-
   test "parseRule - no match" do
     cfg = CFG.new
-    cfg.addRule("Test", [/a/,/b/], [])
-    terms, new_terms = cfg.parseRule([/a/,/b/], [], "nothing", 0)
-    p terms
-    p new_terms
+    match_index, match = cfg.parseRule([/a/,/b/], [], "nothing", 0)
+    assert_equal -1, match_index
+    assert_equal "", match
   end
+
+  test "parseRule - simple match" do
+    cfg = CFG.new
+    input_string = "ab"
+    terms, new_terms = cfg.parseRule([/a/,/b/], [], input_string, 0)
+    assert_equal "ab", terms
+    assert_equal "ab", new_terms
+    assert_equal "", input_string
+  end
+
+  test "parseRule - simple match with repetition" do
+    cfg = CFG.new
+    input_string = "ab,ab,ab,ab"
+    terms, new_terms = cfg.parseRule([/a/,/b/, [/,/]], [], input_string, 0)
+    assert_equal "ab,ab,ab,ab", terms
+    assert_equal "ab,ab,ab,ab", new_terms
+    assert_equal "", input_string
+  end
+
+  test "parseRule - simple match with excess in input string" do
+    cfg = CFG.new
+    input_string = "ab something else"
+    terms, new_terms = cfg.parseRule([/a/,/b/], [], input_string, 0)
+    assert_equal "ab", terms
+    assert_equal "ab", new_terms
+    assert_equal " something else", input_string
+  end
+
+  test "parseRule - match with another rule" do
+    cfg = CFG.new
+    cfg.addRule "test", [ /thing/ ], []
+    input_string = "a thing"
+    terms, new_terms = cfg.parseRule([/a /, "test"], [], input_string, 0)
+    assert_equal "a thing", terms
+    assert_equal "a thing", new_terms
+    assert_equal "", input_string
+  end
+
+  test "parseRule - simple match with translation and excess in input string" do
+    cfg = CFG.new
+    cfg.instance_variable_set "@transform", true
+    input_string = "ab something else"
+    terms, new_terms = cfg.parseRule([/a/,/b/], [2, " flipped with ", 1], input_string, 0)
+    assert_equal "ab", terms
+    assert_equal "b flipped with a", new_terms
+    assert_equal " something else", input_string
+  end
+
+  test "parseRule - simple match with repetition and translation" do
+    cfg = CFG.new
+    cfg.instance_variable_set "@transform", true
+    input_string = "ab,ab,ab,ab ab"
+    terms, new_terms = cfg.parseRule([/a/,/b/, [/,/]], [ 1, [:c, " no a's here ", 2] ], input_string, 0)
+    assert_equal "ab,ab,ab,ab", terms
+    assert_equal "a no a's here b no a's here b", new_terms
+    assert_equal " ab", input_string
+  end
+
 end
