@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class CFGTest < ActiveSupport::TestCase
+
   test "initializes" do
     cfg = CFG.new
     assert_equal( {}, cfg.instance_variable_get("@rules") )
@@ -161,7 +162,79 @@ class CFGTest < ActiveSupport::TestCase
 
   #=====================================================================
   #translateHelper
-  #todo
+
+  test "translateHelper - exception on invalid translation object" do
+    cfg = CFG.new
+
+    exception = assert_raises(RuntimeError) {
+      cfg.translateHelper(/a/, 0, "", [ [/a/, "a"] ], 1, 0)
+    }
+    assert_equal 'invalid transform element; must be either Fixnum or String or Array, ignoring:Regexp', exception.message
+  end
+
+  test "translateHelper - string is the translation object" do
+    cfg = CFG.new
+    number_of_subrules = 1
+    new_translation = cfg.translateHelper("new is appended", 0, "old terms stay ", [ [/new.*/, "new is appended"] ], number_of_subrules, 0)
+    assert_equal "old terms stay new is appended", new_translation
+  end
+
+  test "translateHelper - fixnum is the tx object, but is larger than number of rules matched" do
+    cfg = CFG.new
+    number_of_subrules = 2
+    new_translation = cfg.translateHelper(3, 0, "nothing returned", [ [/a/, "a"], ["S1", "ab"] ], number_of_subrules, 0)
+    assert_equal "", new_translation
+  end
+
+  test "translateHelper - fixnum, not within a repeated set of pairs" do
+    cfg = CFG.new
+    number_of_subrules = 2
+    new_translation = cfg.translateHelper(1, 0, "that will be ", [ [/added/, "added"], ["S1", "ab"] ], number_of_subrules, 0)
+    assert_equal "that will be added", new_translation
+  end
+
+  test "translateHelper - fixnum, within a repeated set of pairs" do
+    cfg = CFG.new
+    number_of_subrules = 2
+    new_translation = cfg.translateHelper(2, 0, "a", [[/[abc]/, "a"], [/,/, ","], [/[abc]/, "b"], [/,/, ","], [/[abc]/, "c"]], number_of_subrules, 0)
+    assert_equal "a,", new_translation
+
+    new_translation = cfg.translateHelper(3, 0, "a", [[/[abc]/, "a"], [/,/, ","], [/[abc]/, "b"], [/,/, ","], [/[abc]/, "c"]], number_of_subrules, 0)
+    assert_equal "ab", new_translation
+  end
+
+  #=====================================================================
+  #parseSentance
+
+  test "parseSentance - no rules defined" do
+    cfg = CFG.new
+    assert_equal nil, cfg.parseSentance("S", "test", 0)
+  end
+
+  test "parseSentance - returns nil if no rules match" do
+    cfg = CFG.new
+    cfg.addRule("Test", [/a/,/b/], [])
+    cfg.addRule("Test", [/a/,/c/], [])
+    cfg.addRule("Test", [/abcde/], [])
+    cfg.instance_variable_set "@rules_checked", 0
+
+    def cfg.parseRule(rule, tx, linecopy, trace); @rules_checked += 1; end
+
+    match, line = cfg.parseSentance("Test", "no match", 0)
+    assert match.nil?
+    assert line.nil?
+    assert_equal 3, cfg.instance_variable_get( "@rules_checked" )
+  end
+
+  test "parseSentance - goes through all the rules until a matching rule is found" do
+    cfg = CFG.new
+    cfg.addRule("Test", [/a/,/b/], [])
+
+    def cfg.parseRule(rule, tx, linecopy, trace); ["ab", "ab rest of sentance"]; end
+
+    match, line = cfg.parseSentance("Test", "ab rest of sentance", 0)
+    assert_equal "ab", match
+    assert_equal "ab rest of sentance", line
+  end
+
 end
-
-

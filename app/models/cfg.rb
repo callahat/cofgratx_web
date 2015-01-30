@@ -116,7 +116,7 @@ class CFG
 
 
   def parseSentance(s, line, trace)
-  print s + ":" + @rules[s.to_sym].inspect +  "\n"  unless trace < 1
+    print s + ":" + @rules[s.to_sym].inspect +  "\n"  unless trace < 1
     @rules[s.to_sym].each{|r|
       rule = r[0]
       tx = r[1]
@@ -239,7 +239,7 @@ class CFG
     elsif tx.class == String
       new_terms += tx
     else #should never get this far
-      print "invalid transform element; must be either Fixnum or String or Array, ignoring:" + tx.class.to_s unless trace < 1
+      raise "invalid transform element; must be either Fixnum or String or Array, ignoring:" + tx.class.to_s
     end
     return new_terms
   end
