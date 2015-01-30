@@ -239,6 +239,7 @@ class CFGTest < ActiveSupport::TestCase
 
   #=====================================================================
   #parseRule
+
   test "parseRule - no match" do
     cfg = CFG.new
     match_index, match = cfg.parseRule([/a/,/b/], [], "nothing", 0)
@@ -303,4 +304,70 @@ class CFGTest < ActiveSupport::TestCase
     assert_equal " ab", input_string
   end
 
+  #=====================================================================
+  #txString
+
+  test "txString - no match" do
+    cfg = CFG.new
+    cfg.addRule "test", [ /thing/ ], []
+
+    input_string = "a"
+
+    str, new_str = cfg.txString("test", input_string)
+
+    assert_equal -1, str
+    assert_equal "Failed to match given string:#{input_string}", new_str
+    assert_equal "a", input_string
+
+    input_string = "thingz"
+
+    str, new_str = cfg.txString("test", input_string)
+
+    assert_equal -1, str
+    assert_equal "Failed to match given string:#{input_string}", new_str
+    assert_equal "thingz", input_string
+  end
+
+  test "txString - match" do
+    cfg = CFG.new
+    cfg.addRule "test", [ /thing/ ], []
+
+    input_string = "thing"
+
+    str, new_str = cfg.txString("test", input_string)
+
+    assert_equal "thing", str
+    assert_equal "thing", new_str
+    assert_equal "thing", input_string
+  end
+
+  test "txString - match with translation" do
+    cfg = CFG.new
+    cfg.addRule "S1", [ /a/, "S2", /a/ ], [1, 3, 2]
+    cfg.addRule "S2", [ /b/ ], []
+    cfg.addRule "S2", [ "S1" ], []
+
+    str, new_str = cfg.txString("S1", "aba")
+    assert_equal "aba", str
+    assert_equal "aab", new_str
+
+    str, new_str = cfg.txString("S1", "aabaa")
+    assert_equal "aabaa", str
+    assert_equal "aaaab", new_str
+
+    str, new_str = cfg.txString("S1", "b")
+    assert_equal -1, str
+    assert_equal "Failed to match given string:b", new_str
+  end
+
+  #test "txString - rule order shouldn't matter" do
+  #  cfg = CFG.new
+  #  cfg.addRule "S1", [ /ba/, "S2" ], []
+  #  cfg.addRule "S2", [ /b/ ], []
+  #  cfg.addRule "S2", [ /ba/ ], []
+
+  #  str, new_str = cfg.txString("S1", "bba")
+  #  assert_equal "bba", str
+  #  assert_equal "bba", new_str
+  #end
 end
