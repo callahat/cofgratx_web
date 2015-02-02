@@ -12,7 +12,7 @@
   <p>
     To give an example, the following set of rules covers strings with one "b" surrounded by as many "a"s on the left as there are on the right.
   </p>
-  
+
 <code>Example1
 Name      Pattern         Translation
 S1        /a/, "S2", /a/
@@ -22,7 +22,7 @@ S2        "S1"</code>
   <p>
     If there are multiple rules with the same name, the string will be evaluated using the rules in the order they are entered until a match is found or there are no more rules. For example, consider the string "aabaa" with the grammar above. Rule "S1" is used. The string has an "a" at the front and end: "aS2a". Does the center part of the string, "aba", fit rule "S2"? The first S2 rule is evaluated. "aba" does not fit the first definition of b. What about the next S2 definition, which is S1? It starts with and ends with an "a", so far so good. What about the middle part of the string (which is "b")? "b" fits the first definition of S2, so the string "aabaa" fits rule S1. In other terms:
   </p>
-  
+
 <code>aabaa => aaS2aa
 aaS2aa => aS1a
 aS1a => aS2a
@@ -31,8 +31,8 @@ aS2a => S1</code>
   <p>
     And in the other direction:
   </p>
-  
-<code>S1 => aS2a 
+
+<code>S1 => aS2a
 aS2a => aS1a
 aS1a => aaS2aa
 aaS2aa => aabaa</code>
@@ -40,38 +40,38 @@ aaS2aa => aabaa</code>
   <p>
     To complicate things slightly, the pattern elements of a rule may be repeatable. This allows arrays of elements, such as parameters to a find_first, to be translated more easily, and not just matched. It is possible to write a grammar without using the repetition, however some translations may be difficult if not impossible to correctly achieve without it (this will be explained further in the translation section). To specify that a rule definition may repeat, the final pattern element is denoted as a regexp in square brackets. For example, the following grammar matches strings such as "abb", "abbb,abbbbbb,abb","abb,abb,abb" etc:
   <p>
-  
+
 <code>Example2
 Name      Pattern         Translation
 S1        /ab/, "S2", [/,/]
 S2        /b/, "S2"
 S2        /b/</code>
-  
+
   <p>
     The third part of the rule is the translation. By default, if no translation is defined, then no translation will occur. A translation will also not take place for a string which does not fit match the rules of the grammar. The translation may take evaluations of the pattern elements and do one of three things: leave the evaluation in the order it occurs, move it to another location, or remove it entirely. It is also possible to put arbitrary strings between elements. Each of the pattern elements of the rule has an index number, starting with 1 being the first element, 2 the second and so forth. Looking back at Example1, there are three indexes for the three rule elements. Consider Example3:
   </p>
-  
+
 <code>Example3
 Name      Pattern         Translation
 S1        /a/, "S2", /a/    1, 3, 2
 S2        /b/
 S2        "S1"</code>
-  
+
   <p>
     This will match symmetrical strings of a's with one b in the middle, and return a translated string such that the b is now at the leftmost position in the string. Ie, "aabaa" would be translated to "aaaab". Translating repitions is slightly more complicated. To denote part of a translation that will possibly repeat, enclose it within square brackets "[]". There must be at least one index, and can also be any amout of arbitrary strings. This repetition part will start with the first encounter of the index unless the first element in the repetition part is a semicolon followed by a lowercase letter, ie ":b" to start with the second repetition. ":a" to start at the first repetition, ":b" to start at the second, ":c" for the third, ":d" for the fourth, etc. This allows the first repitition (or initial repititions) to be handled differently during translation. This is illustrated in the next example:
   </p>
-  
+
 <code>Example4
 Name      Pattern                                  Translation
 func arr  "param key", /\=>/, "param val", [/,/]   1, "= ?", [:b, " and ", 1, "= ?"], "'", [", ", 3]</code>
-  
+
   <p>
-    The indexes that can be used in the repetition parts of the translation are the index numbers of the parts of the rule. In a repitition part of the translation, the index stands for the index of the base rule, and will be repeated for each iteration. Assumming rules for "param key" and "param val" are already defined (and the "param key" rule pulled off the initial colon), and given the string 
+    The indexes that can be used in the repetition parts of the translation are the index numbers of the parts of the rule. In a repitition part of the translation, the index stands for the index of the base rule, and will be repeated for each iteration. Assumming rules for "param key" and "param val" are already defined (and the "param key" rule pulled off the initial colon), and given the string
 <code>":name => $name, :user_id => 2, :active => true"</code>
 the above rule would translate it to:
 <code>"name = ? and user_id = ? and active = ?', $name, 2, true"</code>
   </p>
-  
+
   <p>
     More graphically the translation is seen as:
   </p>
@@ -84,27 +84,3 @@ tx. string:     1   "= ?" and " 1      "= ?" and " 1     "= ?"'", " 3   ", " 3",
 tranlsated:    |name |= ?| and |user_id |= ?| and |active |= ?|'|, |$name|, |2|, |true
 
 (NOTE: pipes, |, separate elements of the translated string)</code>
-  
-  
-  
-<h2>Eratta</h2>
-  
-  <p>
-    There are some limitations at the moment. When evaluating a rule, the first match will be used, which might not be the best match. This can sometimes cause an valid string to be ruled as invalid for the grammar. So it is a good idea to put more specific rules higher than less specific rules. To illustrate, consider the following grammar:
-  </p>
-	
-<code>Name      Pattern         Translation
-S1        /b/, "S2"
-S2        /b/
-S2        /ba/</code>
-
-  <p>
-    Given the string "bba", while valid for the grammar, would fail. Instead, the grammar should be written as:
-  </p>
-
-<code>Name      Pattern         Translation
-S1        /b/, "S2"
-S2        /ba/
-S2        /b/</code>
-  
-</div>

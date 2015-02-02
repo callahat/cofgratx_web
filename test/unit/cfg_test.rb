@@ -84,8 +84,9 @@ class CFGTest < ActiveSupport::TestCase
   test "addRule - add an invalid rule" do
     cfg = CFG.new
 
-    cfg.addRule("test", [ 12 ], [])
+    invalid_resp = cfg.addRule("test", [ 12 ], [])
 
+    assert_equal "Rule invalid:\nRule arrays must be of one or more String and/or Regexp\n", invalid_resp
     assert_equal( {}, cfg.dumpRules )
   end
 
@@ -208,7 +209,7 @@ class CFGTest < ActiveSupport::TestCase
 
   test "parseSentance - no rules defined" do
     cfg = CFG.new
-    assert_equal nil, cfg.parseSentance("S", "test", 0)
+    assert_equal [], cfg.parseSentance("S", "test", 0)
   end
 
   test "parseSentance - returns nil if no rules match" do
@@ -218,11 +219,11 @@ class CFGTest < ActiveSupport::TestCase
     cfg.addRule("Test", [/abcde/], [])
     cfg.instance_variable_set "@rules_checked", 0
 
-    def cfg.parseRule(rule, tx, linecopy, trace); @rules_checked += 1; end
+    def cfg.parseRule(rule, tx, linecopy, trace); @rules_checked += 1; [] end
 
-    match, line = cfg.parseSentance("Test", "no match", 0)
-    assert match.nil?
-    assert line.nil?
+    matches = cfg.parseSentance("Test", "no match", 0)
+
+    assert_equal 0, matches.size
     assert_equal 3, cfg.instance_variable_get( "@rules_checked" )
   end
 
@@ -230,9 +231,11 @@ class CFGTest < ActiveSupport::TestCase
     cfg = CFG.new
     cfg.addRule("Test", [/a/,/b/], [])
 
-    def cfg.parseRule(rule, tx, linecopy, trace); ["ab", "ab rest of sentance"]; end
+    def cfg.parseRule(rule, tx, linecopy, trace); [ ["ab", "ab rest of sentance"] ]; end
 
-    match, line = cfg.parseSentance("Test", "ab rest of sentance", 0)
+    matches = cfg.parseSentance("Test", "ab rest of sentance", 0)
+    assert_equal 1, matches.size
+    match, line = matches.first
     assert_equal "ab", match
     assert_equal "ab rest of sentance", line
   end
@@ -242,66 +245,79 @@ class CFGTest < ActiveSupport::TestCase
 
   test "parseRule - no match" do
     cfg = CFG.new
-    match_index, match = cfg.parseRule([/a/,/b/], [], "nothing", 0)
-    assert_equal -1, match_index
-    assert_equal "", match
+    matches = cfg.parseRule([/a/,/b/], [], "nothing", 0)
+    assert_equal [], matches
   end
 
   test "parseRule - simple match" do
     cfg = CFG.new
     input_string = "ab"
-    terms, new_terms = cfg.parseRule([/a/,/b/], [], input_string, 0)
+    matches = cfg.parseRule([/a/,/b/], [], input_string, 0)
+    terms, new_terms = matches.first
     assert_equal "ab", terms
     assert_equal "ab", new_terms
-    assert_equal "", input_string
+    assert_equal "ab", input_string
+    assert_equal 1, matches.size
   end
 
   test "parseRule - simple match with repetition" do
     cfg = CFG.new
     input_string = "ab,ab,ab,ab"
-    terms, new_terms = cfg.parseRule([/a/,/b/, [/,/]], [], input_string, 0)
+    matches = cfg.parseRule([/a/,/b/, [/,/]], [], input_string, 0)
+    terms, new_terms = matches.first
     assert_equal "ab,ab,ab,ab", terms
     assert_equal "ab,ab,ab,ab", new_terms
-    assert_equal "", input_string
+    assert_equal "ab,ab,ab,ab", input_string
+    assert_equal 1, matches.size
   end
 
   test "parseRule - simple match with excess in input string" do
     cfg = CFG.new
     input_string = "ab something else"
-    terms, new_terms = cfg.parseRule([/a/,/b/], [], input_string, 0)
+    matches = cfg.parseRule([/a/,/b/], [], input_string, 0)
+    terms, new_terms = matches.first
     assert_equal "ab", terms
     assert_equal "ab", new_terms
-    assert_equal " something else", input_string
+    assert_equal "ab something else", input_string
+    assert_equal 1, matches.size
   end
 
   test "parseRule - match with another rule" do
     cfg = CFG.new
     cfg.addRule "test", [ /thing/ ], []
     input_string = "a thing"
-    terms, new_terms = cfg.parseRule([/a /, "test"], [], input_string, 0)
+    matches = cfg.parseRule([/a /, "test"], [], input_string, 0)
+
+    terms, new_terms = matches.first
+
     assert_equal "a thing", terms
     assert_equal "a thing", new_terms
-    assert_equal "", input_string
+    assert_equal "a thing", input_string
+    assert_equal 1, matches.size
   end
 
   test "parseRule - simple match with translation and excess in input string" do
     cfg = CFG.new
     cfg.instance_variable_set "@transform", true
     input_string = "ab something else"
-    terms, new_terms = cfg.parseRule([/a/,/b/], [2, " flipped with ", 1], input_string, 0)
+    matches = cfg.parseRule([/a/,/b/], [2, " flipped with ", 1], input_string, 0)
+    terms, new_terms = matches.first
     assert_equal "ab", terms
     assert_equal "b flipped with a", new_terms
-    assert_equal " something else", input_string
+    assert_equal "ab something else", input_string
+    assert_equal 1, matches.size
   end
 
   test "parseRule - simple match with repetition and translation" do
     cfg = CFG.new
     cfg.instance_variable_set "@transform", true
     input_string = "ab,ab,ab,ab ab"
-    terms, new_terms = cfg.parseRule([/a/,/b/, [/,/]], [ 1, [:c, " no a's here ", 2] ], input_string, 0)
+    matches = cfg.parseRule([/a/,/b/, [/,/]], [ 1, [:c, " no a's here ", 2] ], input_string, 0)
+    terms, new_terms = matches.first
     assert_equal "ab,ab,ab,ab", terms
     assert_equal "a no a's here b no a's here b", new_terms
-    assert_equal " ab", input_string
+    assert_equal "ab,ab,ab,ab ab", input_string
+    assert_equal 1, matches.size
   end
 
   #=====================================================================
@@ -313,7 +329,7 @@ class CFGTest < ActiveSupport::TestCase
 
     input_string = "a"
 
-    str, new_str = cfg.txString("test", input_string)
+    str, new_str = cfg.txString("test", input_string).first
 
     assert_equal -1, str
     assert_equal "Failed to match given string:#{input_string}", new_str
@@ -321,11 +337,13 @@ class CFGTest < ActiveSupport::TestCase
 
     input_string = "thingz"
 
-    str, new_str = cfg.txString("test", input_string)
+    results = cfg.txString("test", input_string)
+    str, new_str = results.first
 
     assert_equal -1, str
     assert_equal "Failed to match given string:#{input_string}", new_str
     assert_equal "thingz", input_string
+    assert_equal 1, results.size
   end
 
   test "txString - match" do
@@ -334,11 +352,13 @@ class CFGTest < ActiveSupport::TestCase
 
     input_string = "thing"
 
-    str, new_str = cfg.txString("test", input_string)
+    results = cfg.txString("test", input_string)
+    str, new_str = results.first
 
     assert_equal "thing", str
     assert_equal "thing", new_str
     assert_equal "thing", input_string
+    assert_equal 1, results.size
   end
 
   test "txString - match with translation" do
@@ -347,27 +367,49 @@ class CFGTest < ActiveSupport::TestCase
     cfg.addRule "S2", [ /b/ ], []
     cfg.addRule "S2", [ "S1" ], []
 
-    str, new_str = cfg.txString("S1", "aba")
+    results = cfg.txString("S1", "aba")
+    str, new_str = results.first
     assert_equal "aba", str
     assert_equal "aab", new_str
+    assert_equal 1, results.size
 
-    str, new_str = cfg.txString("S1", "aabaa")
+    results = cfg.txString("S1", "aabaa")
+    str, new_str = results.first
     assert_equal "aabaa", str
     assert_equal "aaaab", new_str
+    assert_equal 1, results.size
 
-    str, new_str = cfg.txString("S1", "b")
+    results = cfg.txString("S1", "b")
+    str, new_str = results.first
     assert_equal -1, str
     assert_equal "Failed to match given string:b", new_str
+    assert_equal 1, results.size
   end
 
-  #test "txString - rule order shouldn't matter" do
-  #  cfg = CFG.new
-  #  cfg.addRule "S1", [ /ba/, "S2" ], []
-  #  cfg.addRule "S2", [ /b/ ], []
-  #  cfg.addRule "S2", [ /ba/ ], []
+  test "txString - rule order shouldn't matter part one" do
+    cfg = CFG.new
+    cfg.addRule "S1", [ /b/, "S2" ], []
+    cfg.addRule "S2", [ /b/ ], []
+    cfg.addRule "S2", [ /ba/ ], []
 
-  #  str, new_str = cfg.txString("S1", "bba")
-  #  assert_equal "bba", str
-  #  assert_equal "bba", new_str
-  #end
+    results = cfg.txString("S1", "bba")
+    str, new_str = results.first
+    assert_equal "bba", str
+    assert_equal "bba", new_str
+    assert_equal 1, results.size
+  end
+
+  test "txString - rule order shouldn't matter part two" do
+    cfg = CFG.new
+    cfg.addRule "S1", [ /b/, "S2" ], []
+    cfg.addRule "S2", [ /ba/ ], []
+    cfg.addRule "S2", [ /b/ ], []
+
+    results = cfg.txString("S1", "bba")
+    str, new_str = results.first
+    assert_equal "bba", str
+    assert_equal "bba", new_str
+    assert_equal 1, results.size
+  end
+
 end

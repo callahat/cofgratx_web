@@ -28,10 +28,10 @@ class CFG
   #      on sentance:  "ab,ab,ab"
   #      translates to: "a foob foob"
   #
-  def addRule (s, d, t)
+  def addRule(s, d, t)
     invalidMsg = CFG.ruleInvalid(s, d, t)
     unless invalidMsg.nil?
-      print "Rule invalid:\n" + invalidMsg
+      return "Rule invalid:\n" + invalidMsg
     else
       @rules[s.to_sym] = [] unless @rules[s.to_sym]
       @rules[s.to_sym].push([d,t])
@@ -90,141 +90,178 @@ class CFG
   #Kinda a debugging front end, allows lots levels of tracing to be dumped to screen, and option
   #to perform or not perform the translation
   def parseString(s, line, trace, transform)
-    @allgobbled = false
     @sp = trace
     @transform = transform
     sent,new_sent = parseSentance(s, line, trace)
-    if !sent.nil? && @allgobbled
-      print "\n\n\nMATCHED!" + sent.nil?.to_s + "." + line + ".\n"
-      print "tx to:" + new_sent.to_s + "\n"
-    else
-      print "\n\n\nNO match" + "." + sent.to_s + "." + line + ".\n"
+
+    matches = parseSentance(s, line, 0)
+    good_matches = []
+    matches.each do |match|
+      sent, new_sent = match
+      if sent == line
+        print "\n\n\nMATCHED!" + sent.nil?.to_s + "." + line + ".\n"
+        print "tx to:" + new_sent.to_s + "\n"
+      else
+        print "\n\n\nNO match" + "." + sent.to_s + "." + line + ".\n"
+      end
     end
   end
 
   #main API wrapper function
   def txString(s, line)
-    @allgobbled = false
     @transform = true
     sent,new_sent = parseSentance(s, line, 0)
-    if !sent.nil? && @allgobbled
-      return sent,new_sent
-    else
-      return -1,"Failed to match given string:" + line
+    matches = parseSentance(s, line, 0)
+    good_matches = []
+    matches.each do |match|
+      sent, new_sent = match
+      if sent == line
+        good_matches << [ sent, new_sent ]
+      end
     end
+    return [ [-1, "Failed to match given string:" + line] ] unless good_matches.size > 0
+    good_matches
   end
 
 
   def parseSentance(s, line, trace)
     print s + ":" + @rules[s.to_sym].inspect +  "\n"  unless trace < 1
+    matches = []
     @rules[s.to_sym].each{|r|
       rule = r[0]
       tx = r[1]
       print spacing(trace) + "Parsing a sentance ]" + line + "[\n" unless trace < 1
       print spacing(trace) + "trying rule:" + rule.to_s + "\n" unless trace < 1
       linecopy = line.dup
-      sent, new_sent = parseRule(rule, tx, linecopy, trace-1)
-      if sent.class == String
-        print spacing(trace) + "." + sent.to_s + "." + sent.class.to_s + "\n" unless trace < 1
-        print spacing(trace) + "." + new_sent.to_s + "." + new_sent.class.to_s + "\n" unless trace < 1
-        return sent,new_sent
-      end
+      matches << parseRule(rule, tx, linecopy, trace-1)
     } unless @rules[s.to_sym].nil?
-    return nil
+    matches.flatten(1)
   end
 
   def parseRule(rule, tx, line, trace)
     print spacing(trace) + "Parsing a rule\'" + rule.to_s + "\' \'" + rule.length.to_s + "\'\n" unless trace < 1
-    pairs = []
-    terms = ""
-    new_terms = ""
+
     orig_rule = rule.dup
     rule_copy = rule.dup
     rep_count = 1
 
-    rule_copy.each{|r|
-      rep_elem = nil
-      print spacing(trace) + "terminal:" + r.to_s + " line: " + line + "\n"      unless trace < 1
-      if r.class == String
-        pv, newpv = parseSentance(r, line, trace - 1)
-        print spacing(trace) + "oSPV:" + pv.to_s + "\n" unless trace < 1
-        print spacing(trace) + "nSPV:" + newpv.to_s + "\n" unless trace < 1
-      elsif r.class == Regexp
-        pv = newpv = parseTerminal(r, line, trace)
-        print spacing(trace) + "TPV:" + pv.to_s + "\n" unless trace < 1
-      elsif r.class == Array   #repetition stuff
-        rep_elem = r
-        r=r[0]
-        pv = newpv = parseTerminal(r, line, trace)
-        print spacing(trace) + "RPV:" + pv.to_s + "\n" unless trace < 1
-      end
+    candidates = [{
+      :terms => "",
+      :new_terms => "",
+      :pairs => [],
+      :remaining_line => line.dup
+    }]
 
-      if pv
-        pairs.push([r, newpv])
-        terms += pv.to_s
-        new_terms += newpv.to_s
-        line.slice!(pv)
-        print spacing(trace) + "terms:" + terms.to_s + "\n" unless trace < 1
-        @allgobbled = true if line.length == 0
-        if rep_elem
-          rule_copy.push orig_rule[0..-2]
-          rule_copy.flatten!
-          rule_copy.push rep_elem
-          rep_count += 1
+    rule_copy.each_with_index{|r, rule_index|
+      next_gen_candidates = []
+
+      candidates.each do |candidate_hash|
+        rep_elem = nil
+        print spacing(trace) + "terminal:" + r.to_s + " line: " + candidate_hash[:remaining_line] + "\n"      unless trace < 1
+        if r.class == String
+          matches = parseSentance(r, candidate_hash[:remaining_line], trace - 1)
+          matches.each do |pv_newpv|
+            pv, newpv = pv_newpv
+            print spacing(trace) + "oSPV:" + pv.to_s + "\n" unless trace < 1
+            print spacing(trace) + "nSPV:" + newpv.to_s + "\n" unless trace < 1
+          end
+        elsif r.class == Regexp
+          pv = newpv = parseTerminal(r, candidate_hash[:remaining_line], trace)
+          matches = [ [pv, newpv] ]
+          print spacing(trace) + "TPV:" + pv.to_s + "\n" unless trace < 1
+        elsif r.class == Array   #repetition stuff
+          rep_elem = r
+          r=r[0]
+          pv = newpv = parseTerminal(r, candidate_hash[:remaining_line], trace)
+          matches = [ [pv, newpv] ]
+          print spacing(trace) + "RPV:" + pv.to_s + "\n" unless trace < 1
         end
-      elsif rep_elem  #if the rep element is not found again, assume all have been found and exit normally
-        print spacing(trace) + "no more rep elements\n" unless trace < 1
-        break
-      else
-        print spacing(trace) + "FAILS" unless trace < 1
-        print terms.inspect + "\n" unless trace < 1
-        terms = -1  #string normal return for this
-        pairs = []
-        return terms, new_terms
-        break
+
+        matches.each do |pv_newpv|
+          pv, newpv = pv_newpv
+
+          new_candidate_hash = candidate_hash.clone
+          new_candidate_hash[:pairs] = candidate_hash[:pairs].dup
+          new_candidate_hash[:terms] = candidate_hash[:terms].dup
+          new_candidate_hash[:new_terms] = candidate_hash[:new_terms].dup
+          new_candidate_hash[:remaining_line] = candidate_hash[:remaining_line].dup
+
+          if pv
+            new_candidate_hash[:pairs].push([r, newpv])
+            new_candidate_hash[:terms] += pv.to_s
+            new_candidate_hash[:new_terms] += newpv.to_s
+            new_candidate_hash[:remaining_line].slice!(pv)
+            unless trace < 1
+              print spacing(trace) + "candidate terms:" + new_candidate_hash[:terms].to_s + "\n"
+            end
+
+            if rep_elem
+              rule_copy.push orig_rule[0..-2]
+              rule_copy.flatten!
+              rule_copy.push rep_elem
+              rep_count += 1
+            end
+          elsif rep_elem  #if the rep element is not found again, assume all have been found and exit normally
+            print spacing(trace) + "no more rep elements\n" unless trace < 1
+            #break
+          else
+            print spacing(trace) + "FAILS" unless trace < 1
+            print new_candidate_hash[:terms].inspect + "\n" unless trace < 1
+            next
+          end
+          next_gen_candidates << new_candidate_hash
+        end
+        candidates = next_gen_candidates
       end
     }
     print spacing(trace) + "AFTER\n"       unless trace < 1
+    candidates.each do |candidate|
+      print spacing(trace) + candidate[:remaining_line] + "\n"       unless trace < 1
+    end
 
-    print spacing(trace) + line + "\n"       unless trace < 1
 
     if @transform && !tx.empty?
-      print spacing(trace) + "attempting to translate\n"    unless trace < 1
-      print spacing(trace) + "pairs array size:" + pairs.size.to_s + "\n"    unless trace < 1
-      print spacing(trace) + pairs.inspect + "\n"    unless trace < 1
-      print spacing(trace) + "repetitions:" + rep_count.to_s + "\n"    unless trace < 1
+      candidates.each do |candidate|
+        print spacing(trace) + "attempting to translate\n"    unless trace < 1
+        print spacing(trace) + "pairs array size:" + candidate[:pairs].size.to_s + "\n"    unless trace < 1
+        print spacing(trace) + candidate[:pairs].inspect + "\n"    unless trace < 1
+        print spacing(trace) + "repetitions:" + rep_count.to_s + "\n"    unless trace < 1
 
-      new_terms = ""
+        candidate[:new_terms] = ""
 
-      for i in 0..(tx.size-1) do
-        print spacing(trace) + "tx elem:" + i.to_s + "\n"    unless trace < 1
-        if tx[i].class == Array
-          if tx[i][0].class == Symbol
-            rep_start = tx[i][0].to_s[0] - "a"[0]
-            j_start = 1
-          else
-            rep_start = 0
-            j_start = 0
-          end
-          for rep in rep_start..(rep_count-1) do
-            print spacing(trace) + "rep:" + rep.to_s + "\n"    unless trace < 1
-            for j in j_start..(tx[i].size-1) do
-              new_terms = translateHelper(tx[i][j], rep, new_terms, pairs, orig_rule.size, trace)
-              print spacing(trace) + "aft tx   helper:" + new_terms + "\n"    unless trace < 1
+        for i in 0..(tx.size-1) do
+          print spacing(trace) + "tx elem:" + i.to_s + "\n"    unless trace < 1
+          if tx[i].class == Array
+            if tx[i][0].class == Symbol
+              rep_start = tx[i][0].to_s[0] - "a"[0]
+              j_start = 1
+            else
+              rep_start = 0
+              j_start = 0
             end
-            print spacing(trace) + "aft tx j helper:" + new_terms + "\n"    unless trace < 1
+            for rep in rep_start..(rep_count-1) do
+              print spacing(trace) + "rep:" + rep.to_s + "\n"    unless trace < 1
+              for j in j_start..(tx[i].size-1) do
+                candidate[:new_terms] = translateHelper(tx[i][j], rep, candidate[:new_terms], candidate[:pairs], orig_rule.size, trace)
+                print spacing(trace) + "aft tx   helper:" + candidate[:new_terms] + "\n"    unless trace < 1
+              end
+              print spacing(trace) + "aft tx j helper:" + candidate[:new_terms] + "\n"    unless trace < 1
+            end
+          else
+            candidate[:new_terms] = translateHelper(tx[i], 0, candidate[:new_terms], candidate[:pairs], orig_rule.size, trace)
+            print spacing(trace) + "aft tx helper:" + candidate[:new_terms] + "\n"    unless trace < 1
           end
-        else
-          new_terms = translateHelper(tx[i], 0, new_terms, pairs, orig_rule.size, trace)
-          print spacing(trace) + "aft tx helper:" + new_terms + "\n"    unless trace < 1
         end
       end
     end
 
     #NOTE: the pairs array is used for making transformations easier.
-    print spacing(trace) + pairs.inspect + "\n" unless trace < 1
-    print spacing(trace) + terms.inspect + "\n" unless trace < 1
-    return terms, new_terms
+    candidates.each do |candidate|
+      print spacing(trace) + "Candidate:\n" unless trace < 1
+      print spacing(trace) + candidate[:pairs].inspect + "\n" unless trace < 1
+      print spacing(trace) + candidate[:terms].inspect + "\n" unless trace < 1
+    end
+    return candidates.map{|candidate| [ candidate[:terms], candidate[:new_terms] ] }
   end
 
   def translateHelper(tx, rep, new_terms, pairs, offset, trace)

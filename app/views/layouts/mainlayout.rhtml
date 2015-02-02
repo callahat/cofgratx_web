@@ -11,23 +11,23 @@
 <% cache :action_suffix => "nav" + session[:user].nil?.to_s do %>
   <div class="navigation">
     <ul class="main_tabs">
-	  <%= raw nav_tab("Home","default","home","") %>
-	  <%= raw nav_tab("Grammars","grammar","workpad","my_grammars,public_grammars,help,new,edit,create,update") %>
-	 <% if session[:user] == nil %>
-	  <%= raw nav_tab("Login","user","login","verify") %>
-	  <%= raw nav_tab("Register","user","new","create") %>
-	 <% else %>
-	  <%= raw nav_tab("Logout","user","logout","") %>
-	 <% end %>
-	</ul>
-	<% if controller.controller_name == "grammar" %>
-	<ul class="sub_tabs" id="grammars_tab">
-	  <%= raw nav_tab("Workpad","grammar","workpad","") %>
-	  <%= raw nav_tab("My Grammars","grammar","my_grammars","") %>
-	  <%= raw nav_tab("Public Grammars","grammar","public_grammars","") %>
-	  <%= raw nav_tab("Help","grammar","help","") %>
-	</ul>
-	<% end %>
+          <%= raw nav_tab("Home","default","home","") %>
+          <%= raw nav_tab("Grammars","grammar","workpad","my_grammars,public_grammars,help,new,edit,create,update") %>
+         <% if session[:user] == nil %>
+          <%= raw nav_tab("Login","user","login","verify") %>
+          <%= raw nav_tab("Register","user","new","create") %>
+         <% else %>
+          <%= raw nav_tab("Logout","user","logout","") %>
+         <% end %>
+        </ul>
+        <% if controller.controller_name == "grammar" %>
+        <ul class="sub_tabs" id="grammars_tab">
+          <%= raw nav_tab("Workpad","grammar","workpad","") %>
+          <%= raw nav_tab("My Grammars","grammar","my_grammars","") %>
+          <%= raw nav_tab("Public Grammars","grammar","public_grammars","") %>
+          <%= raw nav_tab("Help","grammar","help","") %>
+        </ul>
+        <% end %>
   </div>
 <% end %>
 <div class="notices">
@@ -37,14 +37,14 @@
 <div class="yield">
   <% unless session[:user].nil? %>
     <div class="welcome">
-	  Welcome, <%= session[:user][:name] %>
-	</div>
+          Welcome, <%= session[:user][:name] %>
+        </div>
   <% end %>
   <%= yield %>
 </div>
 
 <div class="footer">
-Copyright 2009, <a href="mailto:mrcallahat at yahoo period com">T. Callahan</a>
+Copyright 2009-2015, <a href="mailto:mrcallahat at yahoo period com">T. Callahan</a>
 </div>
 </body>
 </html>
