@@ -240,6 +240,31 @@ class CFGTest < ActiveSupport::TestCase
     assert_equal "ab rest of sentance", line
   end
 
+  test "parseSentance - rules referencing themselves - complex example" do
+    cfg = CFG.new
+    cfg.addRule "test", [ /thing/ ], []
+    cfg.addRule "S", [/a/, "S", /a/], []
+    cfg.addRule "S", [/a/], []
+    cfg.addRule "S", ["S", [/ and /]], []
+
+    #this will cause a stack too deep exception
+    assert_raises(SystemStackError) {
+      matches = cfg.parseSentance("S", "ab rest of sentance", 0)
+    }
+    #assert_equal 1, matches.size
+    #match, line = matches.first
+    #assert_equal "a", match
+    #assert_equal "a", line
+
+    #matches = cfg.parseSentance("S", "aa and ababababa", 0)
+    #assert_equal 1, matches.size
+    #match, line = matches.first
+    #assert_equal "aa and ababababa", match
+    #assert_equal "aa and ababababa", line
+
+  end
+
+
   #=====================================================================
   #parseRule
 
