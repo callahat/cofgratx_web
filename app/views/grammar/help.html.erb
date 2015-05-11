@@ -1,5 +1,5 @@
 <div class="grammar_side_bar">
-  <%= raw side_bar(@grammars) %>
+  <%= side_bar(@grammars).html_safe %>
 </div>
 <div class="grammar_yield">
   <h1>Help</h1>
@@ -84,3 +84,4 @@ tx. string:     1   "= ?" and " 1      "= ?" and " 1     "= ?"'", " 3   ", " 3",
 tranlsated:    |name |= ?| and |user_id |= ?| and |active |= ?|'|, |$name|, |2|, |true
 
 (NOTE: pipes, |, separate elements of the translated string)</code>
+</div>

@@ -38,7 +38,7 @@ class CFGTest < ActiveSupport::TestCase
 
   test "validates rules - repetition markers" do
     flag = CFG.ruleInvalid "Test", [ [/a/,/b/,","] ], []
-    assert flag.nil?, flag
+    refute flag
 
     flag = CFG.ruleInvalid "Test", [ [1, 2, 3] ], []
     assert flag
@@ -47,10 +47,10 @@ class CFGTest < ActiveSupport::TestCase
 
   test "validates rules - rule arrays" do
     flag = CFG.ruleInvalid "Test", [ /a/ ], []
-    assert flag.nil?, flag
+    refute flag
 
     flag = CFG.ruleInvalid "Test", [ "Wall" ], []
-    assert flag.nil?, flag
+    refute flag
 
     flag = CFG.ruleInvalid "Test", [ 12 ], []
     assert flag
@@ -59,7 +59,7 @@ class CFGTest < ActiveSupport::TestCase
 
   test "validates rules - translation repitition" do
     flag = CFG.ruleInvalid "Test", [], [ [1, 2, :a] ]
-    assert flag.nil?, flag
+    refute flag
 
     flag = CFG.ruleInvalid "Test", [], [ [ 1, /a/ ] ]
     assert flag
@@ -68,10 +68,10 @@ class CFGTest < ActiveSupport::TestCase
 
   test "validate rules - translation arrays" do
     flag = CFG.ruleInvalid "Test", [ ], [ 1 ]
-    assert flag.nil?, flag
+    refute flag
 
     flag = CFG.ruleInvalid "Test", [ ], [ "asfas" ]
-    assert flag.nil?, flag
+    refute flag
 
     flag = CFG.ruleInvalid "Test", [ ], [ /bob/ ]
     assert flag

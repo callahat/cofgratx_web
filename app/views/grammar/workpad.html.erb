@@ -1,5 +1,5 @@
 <div class="grammar_side_bar">
-  <%= raw side_bar(@grammars) %>
+  <%= side_bar(@grammars).html_safe %>
 </div>
 <div class="grammar_yield">
   <h1>Workbench</h1>
@@ -22,7 +22,7 @@
 
     <p>Rules for the current grammar:</p>
     <% cache :cgid => @current_grammar.id do %>
-      <%= raw print_rules(@current_grammar) %>
+      <%= print_rules(@current_grammar).html_safe %>
     <% end %>
 
   <% end %>

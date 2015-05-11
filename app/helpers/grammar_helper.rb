@@ -11,8 +11,8 @@ module GrammarHelper
     lis[:mine] = "<li class=\"title\"><div>My Grammars</div></li>\n" + lis[:mine] if lis[:mine].length > 0
     lis[:public] = "<li class=\"title\"><div>Public Grammars</div></li>\n" + lis[:public] if lis[:public].length > 0
   
-    return "\n<ul>\n<li class=\"title\"><div>No Grammars!</div></li>\n</ul>" if (lis[:mine].length + lis[:public].length == 0)
-    return "<ul>\n" + lis[:mine] + lis[:public] + "\n</ul>"
+    return(("\n<ul>\n<li class=\"title\"><div>No Grammars!</div></li>\n</ul>").html_safe) if (lis[:mine].length + lis[:public].length == 0)
+    ("<ul>\n" + lis[:mine] + lis[:public] + "\n</ul>").html_safe
   end
   
   def side_bar_link(grammar)
@@ -20,9 +20,10 @@ module GrammarHelper
     if (session[:current_grammar_id] == grammar.id)
       li += " current_tab\">" + grammar.name
     else
-      li += "\">" + link_to( raw( span_wrap("&nbsp;"+grammar.name) ), :action => 'choose_grammar', :id => grammar.id)
+      li += "\">" + link_to( span_wrap("&nbsp;"+grammar.name).html_safe, :action => 'choose_grammar', :id => grammar.id)
     end
-    return li + "</li>"
+    li += "</li>"
+    li.html_safe
   end
   
   def print_rules(grammar)
@@ -34,7 +35,8 @@ module GrammarHelper
               " <td>" + r.translation + "</td>\n" + 
               "</tr>\n"
     }
-    return text + "\n</table>"
+    text += "\n</table>"
+    text.html_safe
   end
   
   def rule_input_fields(ra)
@@ -51,7 +53,8 @@ module GrammarHelper
               " <td>" + translation_input + "</td>\n" + 
               "</tr>\n"
     }
-    text + "</table>\n"
+    text += "</table>\n"
+    text.html_safe
   end
 protected
   def table_header

@@ -1,10 +1,6 @@
-require File.dirname(__FILE__) + '/../test_helper'
-require 'grammar_controller'
+require 'test_helper'
 
-# Re-raise errors caught by the controller.
-class GrammarController; def rescue_action(e) raise e end; end
-
-class GrammarControllerTest < Test::Unit::TestCase
+class GrammarControllerTest < ActionController::TestCase
   def setup
     @controller = GrammarController.new
     @request    = ActionController::TestRequest.new

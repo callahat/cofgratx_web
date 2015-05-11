@@ -9,9 +9,9 @@ module ApplicationHelper
     if controller.controller_name == c && (a + alts).index(controller.action_name)
       li += " current_tab\">" + span_wrap(name)
     else
-      li += "\">" + link_to(raw( span_wrap(name) ) , :controller => c, :action => a)
+      li += "\">" + link_to( span_wrap(name).html_safe , :controller => c, :action => a)
     end
     li += "</li>"
-    return li
+    return li.html_safe
   end
 end

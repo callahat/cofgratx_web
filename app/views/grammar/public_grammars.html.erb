@@ -1,5 +1,5 @@
 <div class="grammar_side_bar">
-  <%= raw side_bar(@grammars, [:public]) %>
+  <%= side_bar(@grammars, [:public]).html_safe %>
 </div>
 <div class="grammar_yield">
   <h1>Public Grammars</h1>
@@ -9,7 +9,7 @@
     <% cache :cgid => @current_grammar.id do %>
       "<%= @current_grammar.name %>" is the current grammar. It contains <%= @current_grammar.rules.size %> rules, listed below.
 	  
-      <%= print_rules(@current_grammar) %>
+      <%= print_rules(@current_grammar).html_safe %>
 
 	  <ul class="form"><li><%= link_to 'Copy to "My Grammars"', :action => 'copy', :id => @current_grammar %></li></ul>
     <% end %>
