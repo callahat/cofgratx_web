@@ -50,7 +50,7 @@ class GrammarTest < ActionDispatch::IntegrationTest
         @browser.text_field(id: 'rule_2_pattern').set '/b/, "S"'
         @browser.text_field(id: 'rule_2_translation').set '/B/, 2'
 
-        @browser.button(value: 'Create').click
+        @browser.button(value: 'Create Grammar').click
       end
     end
   end
@@ -71,7 +71,7 @@ class GrammarTest < ActionDispatch::IntegrationTest
         @browser.link(text: 'Edit').click
 
         @browser.text_field(id: 'rule_0_pattern').set '/A/, "S2", /A/'
-        @browser.button(value: 'Update').click
+        @browser.button(value: 'Update Grammar').click
       end
     end
   end

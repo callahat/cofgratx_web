@@ -92,7 +92,9 @@ class GrammarController < ApplicationController
         session[:current_grammar] = @grammar
         redirect_to :action => 'my_grammars'
       else
-        @grammar.errors.add("","Rule names and patterns cannot be null")
+        @grammar.errors.add(:base,"Rule names and patterns cannot be null")
+        @grammar.destroy
+        @rule_array.each{|rule| rule.destroy unless rule.new_record?}
         render :action => 'new'
       end
     end
@@ -143,7 +145,7 @@ class GrammarController < ApplicationController
         session[:current_grammar_id] = @grammar.id
         redirect_to :action => 'my_grammars'
       else
-        @grammar.errors.add("","Rule names and patterns cannot be null")
+        @grammar.errors.add(:base,"Rule names and patterns cannot be null")
         session[:current_grammar_id] = @grammar.id
         render :action => 'edit'
       end
@@ -190,7 +192,7 @@ protected
 
         if !r.save || !(msg = CFG.ruleInvalid(r.name, r.to_CFG_pat_a, r.to_CFG_tx_a)).nil?
           Rails.logger.error "\nFailed to save rule \"" + r.name + "\"" if !r.save
-          g.errors.add("",msg)
+          g.errors.add(:base,msg)
           all_saved = false
         end
       end

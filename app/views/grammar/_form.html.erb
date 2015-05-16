@@ -1,6 +1,6 @@
-<%= error_messages_for 'grammar' %>
+<%= form_for(@grammar, :url =>  grammar_path ) do |f| %>
 
-<!--[form:grammar]-->
+<%= error_messages_for 'grammar' %>
 
 <ul class="form">
   <li><label for="grammar_name">Name:</label>
@@ -17,7 +17,9 @@
   </div>
 </ul>
 <ul class="form"><li><input type="button" value="Add another rule" onClick='addRuleRow();'></li></ul>
-<!--[eoform:user]-->
+<ul class="form"><li><%= f.submit %></li></ul>
+
+<% end %>
 
 <script type="text/javascript">
 function addRuleRow(){
