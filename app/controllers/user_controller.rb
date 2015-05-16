@@ -32,7 +32,7 @@ class UserController < ApplicationController
   def verify
     @user = User.new(params[:user])
     @auser = User.authenticate(params[:user])
-    print @auser.inspect
+
     if @auser.nil?
       flash[:notice] = "Invalid password."
       flash[:notice] = "User \"" + params[:user][:name] + "\" not found." if User.find_by_name(params[:user][:name]).nil?

@@ -1,5 +1,8 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-one:
-  id: 1
-two:
-  id: 2
+simple_grammar:
+  name: "A Simple Grammar"
+  user: first_user
+  version: 1
+  version_type: 1
+  public: false
+  desc: "Just a quick grammar for testing"

@@ -1,7 +1,7 @@
 class GrammarController < ApplicationController
   before_filter :check_signed_in, :only => ['my_grammars', 'copy', 'new','create','edit','update','destroy']
   before_filter :setup_grammars_hash, :only => ['workpad', 'help','my_grammars', 'public_grammars', 'new','create','edit','update','destroy']
-  before_filter :get_current_grammar, :only => ['workpad', 'my_grammars', 'edit', 'public_grammars','destroy', 'copy']
+  before_filter :get_current_grammar, :only => ['workpad', 'my_grammars', 'edit', 'update', 'public_grammars','destroy', 'copy']
 
   def index
     redirect_to :action => 'workpad'
@@ -34,7 +34,7 @@ class GrammarController < ApplicationController
   end
 
   def choose_grammar
-    @grammar = Grammar.find(:first, :conditions => ['id = ?', params[:id]])
+    @grammar = Grammar.first(:conditions => ['id = ?', params[:id]])
     if @grammar.nil?
       flash[:notice] = "Error: The grammar selected was not found."
     elsif @grammar.public || (session[:user] && @grammar.user_id == session[:user][:id])
@@ -59,13 +59,12 @@ class GrammarController < ApplicationController
 
     redirect_to(:back)
   rescue => e
-    p "redirect back error?"
-    p e
+    Rails.logger.error e
     redirect_to(:action => 'workpad')
   end
 
   def my_grammars
-   @current_grammar = nil if @current_grammar && @current_grammar.user_id != session[:user][:id]
+    @current_grammar = nil if @current_grammar && @current_grammar.user_id != session[:user][:id]
   end
 
   def public_grammars
@@ -89,7 +88,7 @@ class GrammarController < ApplicationController
       render :action => 'new'
     else
       if save_rules(@rule_array, @grammar)
-        flash[:notice] = "Grammar saved!<br/>"
+        flash[:notice] = "Grammar saved!"
         session[:current_grammar] = @grammar
         redirect_to :action => 'my_grammars'
       else
@@ -123,24 +122,23 @@ class GrammarController < ApplicationController
   end
 
   def update
-    @grammar = Grammar.find(params[:id])
+    @grammar = @current_grammar #Grammar.find(params[:id])
     if @grammar.user_id != session[:user][:id]
       flash[:notice] = "You cannot edit this grammar"
       redirect_to :action => 'my_grammars'
       return
     end
 
-    print "Failed update of older version of \"" + @grammar.name + "\"" if !@grammar.update_attributes(params[:grammar])
+    Rails.logger.error "Failed update of older version of \"" + @grammar.name + "\"" if !@grammar.update_attributes(params[:grammar])
 
     @rule_array = gen_rule_array(params[:rule])
 
-    @grammar.user_id = session[:user][:id]
     if !@grammar.save
       render :action => 'edit'
     else
       @old_rules = @grammar.rules.uniq #just using @grammar.rules seems to not actually populate the array
       if save_rules(@rule_array, @grammar)
-        flash[:notice] = "Grammar updated!<br/>"
+        flash[:notice] = "Grammar updated!"
         @old_rules.each{|r| r.destroy }
         session[:current_grammar_id] = @grammar.id
         redirect_to :action => 'my_grammars'
@@ -167,11 +165,11 @@ class GrammarController < ApplicationController
 protected
   def setup_grammars_hash
     @grammars = {}
-    @grammars[:public] = Grammar.find(:all, :conditions => ['public = true and version_type = 1'])
+    @grammars[:public] = Grammar.all(:conditions => ['public = true and version_type = 1'])
     if session[:user].nil?
       @grammars[:mine] = []
     else
-      @grammars[:mine] = Grammar.find(:all, :conditions => ['user_id = ? and version_type = 1', session[:user].id])
+      @grammars[:mine] = Grammar.all(:conditions => ['user_id = ? and version_type = 1', session[:user].id])
     end
   end
 
@@ -180,30 +178,30 @@ protected
   end
 
   def save_rules(ra, g)
-    #print "\n******************Saving rules*****************\n"
-    #0.upto(ra.size-1){|i|
-    #  p ra[i].name
-    #}
+    Rails.logger.debug "\n******************Saving rules*****************\n"
+    0.upto(ra.size-1){|i|
+      Rails.logger.debug ra[i].name
+    }
     all_saved = true
     ra.each{ |r|
       unless r.name == '' && r.pattern == ''
         r.grammar_id = g.id
-  #    print "\nname pat tx:" + r.name + r.pattern + r.translation + ":"
+        Rails.logger.debug "\nname pat tx:" + r.name + r.pattern + r.translation + ":"
 
         if !r.save || !(msg = CFG.ruleInvalid(r.name, r.to_CFG_pat_a, r.to_CFG_tx_a)).nil?
-          print "\nFailed to save rule \"" + r.name + "\"" if !r.save
+          Rails.logger.error "\nFailed to save rule \"" + r.name + "\"" if !r.save
           g.errors.add("",msg)
           all_saved = false
         end
       end
     }
-    print "\n\n\nThe cache for " + g.id.to_s + " should be expired"
+    Rails.logger.info "\n\n\nThe cache for " + g.id.to_s + " should be expired"
     expire_fragments(g.id)
     all_saved
   end
 
   def gen_rule_array(rule_hash)
-    ra = Array.new(rule_hash.to_i.size)
+    ra = Array.new(rule_hash.size)
     rule_hash.to_a.each { |r|
       if r[1].nil?
         ra[r[0].to_i] = Rule.new
@@ -211,14 +209,12 @@ protected
         ra[r[0].to_i] = Rule.new(r[1])
       end
     }
-    p "poo"
-    p ra
     ra
   end
 
   def expire_fragments(gid)
-   expire_fragment(:controller => "grammar", :action => "workpad", :cgid => gid)
-   expire_fragment(:controller => "grammar", :action => "my_grammars", :cgid => gid)
-   expire_fragment(:controller => "grammar", :action => "public_grammars", :cgid => gid)
+    expire_fragment(:controller => "grammar", :action => "workpad", :cgid => gid)
+    expire_fragment(:controller => "grammar", :action => "my_grammars", :cgid => gid)
+    expire_fragment(:controller => "grammar", :action => "public_grammars", :cgid => gid)
   end
 end

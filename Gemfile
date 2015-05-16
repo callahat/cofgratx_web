@@ -9,4 +9,6 @@ gem 'mysql2'
 
 group :test do
 #  gem 'minitest'
+  gem "watir-rails"
+  gem "headless"
 end

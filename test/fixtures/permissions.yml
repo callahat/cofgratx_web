@@ -1,0 +1,4 @@
+first_user_permissions:
+  user: first_user
+  admin: false
+  active: true

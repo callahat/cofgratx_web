@@ -1,5 +1,16 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-one:
-  id: 1
-two:
-  id: 2
+simple_grammar_rule1:
+  grammar: simple_grammar
+  name: "S1"
+  pattern: "/a/, \"S2\", /a/"
+  translation: "1, 3, 2"
+simple_grammar_rule2:
+  grammar: simple_grammar
+  name: "S2"
+  pattern: '/b/'
+  translation: ""
+simple_grammar_rule3:
+  grammar: simple_grammar
+  name: "S2"
+  pattern: "S1"
+  translation: ""

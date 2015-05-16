@@ -1,5 +1,8 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-one:
-  id: 1
-two:
-  id: 2
+first_user:
+  name: "test"
+  #passwd: test
+  passwd: "2be85f389fdc8d3e41d87bb15bb3ea82dd40a0c1"
+  passwd2: "2be85f389fdc8d3e41d87bb15bb3ea82dd40a0c1"
+  email: "test@test.com"
+  reg_hash: "ae0ac35c346393f8d54584a8c79484b14ee04dd3"
