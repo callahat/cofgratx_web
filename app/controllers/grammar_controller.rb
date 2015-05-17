@@ -22,7 +22,8 @@ class GrammarController < ApplicationController
       if errors
         flash[:notice] = message
       else
-        oldstring, newstring = session[:cfg].txString(@start, @string)
+        candidates = session[:cfg].txString(@start, @string)
+        oldstring, newstring = candidates.first
         if oldstring == -1
           flash[:notice] = "Failed to match given string for this grammar, with given starting rule."
         else
@@ -57,7 +58,7 @@ class GrammarController < ApplicationController
       flash[:notice] = "Users may not use nonpublic grammars that they do not own"
     end
 
-    redirect_to(:back)
+    redirect_to(:action => 'my_grammars')
   rescue => e
     Rails.logger.error e
     redirect_to(:action => 'workpad')

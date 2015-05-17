@@ -300,7 +300,7 @@ class CFG
   end
 
   def checkRules(initial)
-    return true, "Initial rule \"" + initial + "\" not defined in grammar" if @rules[initial.to_sym].nil?
+    return [true, "Initial rule \"" + initial.to_s + "\" not defined in grammar"] if (initial.nil? or @rules[initial.to_sym].nil?)
     defined = []
     used = []
     @rules.keys.each{|k|
