@@ -1,0 +1,9 @@
+<div class="grammar_side_bar">
+  <%= side_bar(@grammars, [:mine]).html_safe %>
+</div>
+<div class="grammar_yield">
+  <h1>Edit grammar</h1>
+  <p>Please see the "help" tab for information on rule syntax.</p>
+  
+  <%= render :partial => 'form' %>
+</div>

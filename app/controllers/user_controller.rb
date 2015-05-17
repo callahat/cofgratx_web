@@ -1,21 +1,17 @@
 class UserController < ApplicationController
 
-  # GETs should be safe (see http://www.w3.org/2001/tag/doc/whenToUseGet.html)
-  verify :method => :post, :only => [ :destroy, :create, :update ],
-         :redirect_to => { :action => 'login' }
-
   def login
     if flash[:notice].nil?
       reset_session
     end
   end
-  
+
   def logout
     reset_session
     flash[:notice] = "You have sucessfully logged out. Thanks for visiting."
     redirect_to :controller => 'default', :action => 'home'
   end
-  
+
   def activation
     @user = User.find_by_name(params[:bar])
     if @user.nil?
@@ -36,7 +32,7 @@ class UserController < ApplicationController
   def verify
     @user = User.new(params[:user])
     @auser = User.authenticate(params[:user])
-    print @auser.inspect
+
     if @auser.nil?
       flash[:notice] = "Invalid password."
       flash[:notice] = "User \"" + params[:user][:name] + "\" not found." if User.find_by_name(params[:user][:name]).nil?
@@ -50,17 +46,17 @@ class UserController < ApplicationController
       render :action => 'login'
     else
       session[:user] = @auser
-      redirect_to :controller => 'grammar'
+      redirect_to workpad_grammar_url
     end
   end
-  
+
   def new
     @user = User.new
   end
-  
+
   def create
     @user = User.new(params[:user])
-    
+
     if @user.save
       permission = Permission.new
       permission.user_id = @user.id
@@ -72,10 +68,10 @@ class UserController < ApplicationController
       render :action => 'new'
     end
   end
-  
+
   def edit
   end
-  
+
   def update
   end
 end

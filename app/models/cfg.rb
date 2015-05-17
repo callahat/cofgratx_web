@@ -233,7 +233,7 @@ class CFG
           print spacing(trace) + "tx elem:" + i.to_s + "\n"    unless trace < 1
           if tx[i].class == Array
             if tx[i][0].class == Symbol
-              rep_start = tx[i][0].to_s[0] - "a"[0]
+              rep_start = ("a".."z").find_index tx[i][0].to_s[0]
               j_start = 1
             else
               rep_start = 0
@@ -300,7 +300,7 @@ class CFG
   end
 
   def checkRules(initial)
-    return true, "Initial rule \"" + initial + "\" not defined in grammar" if @rules[initial.to_sym].nil?
+    return [true, "Initial rule \"" + initial.to_s + "\" not defined in grammar"] if (initial.nil? or @rules[initial.to_sym].nil?)
     defined = []
     used = []
     @rules.keys.each{|k|

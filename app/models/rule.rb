@@ -4,6 +4,7 @@ class Rule < ActiveRecord::Base
   validates_presence_of :name,:pattern,:grammar_id
   
   before_create :clean_input
+  after_create :clean_input
   before_update :clean_input
     
   def clean

@@ -1,6 +1,25 @@
 Cofgratx::Application.routes.draw do
   root :to => "default#home"
 
+  resource :user, :controller => :user, :except => [:destroy, :show] do
+    collection do
+      get :login
+      get :logout
+      get 'activation/:bar/:foo' => :activation, :as => :activation
+      post :verify
+    end
+  end
+
+  resource :grammar, :controller => :grammar, :except => [:show] do
+    collection do
+      match :workpad
+      get :choose_grammar
+      get :my_grammars
+      get :public_grammars
+      get :help
+      get :copy
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -57,5 +76,5 @@ Cofgratx::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  match ':controller(/:action(/:id(.:format)))'
+  #match ':controller(/:action(/:id(.:format)))'
 end

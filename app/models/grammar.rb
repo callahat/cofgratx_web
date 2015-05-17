@@ -1,5 +1,6 @@
 class Grammar < ActiveRecord::Base
   has_many :rules
+  belongs_to :user
   
   validates_presence_of :name, :user_id
   

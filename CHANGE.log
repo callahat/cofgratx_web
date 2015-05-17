@@ -1,0 +1,12 @@
+topic/upgrade_to_ruby2 - 2015-05-10
+===================================
+Upgrading to use ruby 2.0.0 and rails 3.2.11
+Upgrading tests, mailer, and other files.
+
+
+master - 2015-03-17
+===================================
+Added a test to see if self referential rules (or rules where the first production is
+another rule) would go down until the stack ran out. The answer is yes. So for now, 
+grammars defined should not have a rule as a first part of a rule or this will
+happen: SystemStackError - has gone too deep.

@@ -1,6 +1,6 @@
-<%= error_messages_for 'grammar' %>
+<%= form_for(@grammar, :url =>  grammar_path ) do |f| %>
 
-<!--[form:grammar]-->
+<%= error_messages_for 'grammar' %>
 
 <ul class="form">
   <li><label for="grammar_name">Name:</label>
@@ -13,11 +13,13 @@
 
 <ul class="form_wide">
   <div id="rule_fields">
-    <%= raw rule_input_fields(@rule_array) %>
+    <%= rule_input_fields(@rule_array).html_safe %>
   </div>
 </ul>
 <ul class="form"><li><input type="button" value="Add another rule" onClick='addRuleRow();'></li></ul>
-<!--[eoform:user]-->
+<ul class="form"><li><%= f.submit %></li></ul>
+
+<% end %>
 
 <script type="text/javascript">
 function addRuleRow(){
@@ -27,8 +29,8 @@ function addRuleRow(){
   var n = row.insertCell(0);
   var p = row.insertCell(1);
   var tx = row.insertCell(2);
-  n.innerHTML = "<%= text_field('rule', 'name', 'index' => 'INDEX', 'class' => 'fit rule').gsub(/\"/,"\\\"") %>".replace(/INDEX/g, size);
-  p.innerHTML = "<%= text_field('rule', 'pattern', 'index' => 'INDEX', 'class' => 'fit rule').gsub(/\"/,"\\\"") %>".replace(/INDEX/g, size);
-  tx.innerHTML = "<%= text_field('rule', 'translation', 'index' => 'INDEX', 'class' => 'fit rule').gsub(/\"/,"\\\"") %>".replace(/INDEX/g, size);
+  n.innerHTML = "<%= text_field('rule', 'name', 'index' => 'INDEX', 'class' => 'fit rule').gsub(/\"/,"\\\"").html_safe %>".replace(/INDEX/g, size);
+  p.innerHTML = "<%= text_field('rule', 'pattern', 'index' => 'INDEX', 'class' => 'fit rule').gsub(/\"/,"\\\"").html_safe %>".replace(/INDEX/g, size);
+  tx.innerHTML = "<%= text_field('rule', 'translation', 'index' => 'INDEX', 'class' => 'fit rule').gsub(/\"/,"\\\"").html_safe %>".replace(/INDEX/g, size);
 }
 </script>
