@@ -64,6 +64,7 @@ class GrammarTest < ActionDispatch::IntegrationTest
         @browser.link(href: /my_grammars/).click
         Watir::Wait.until{ @browser.ul(id: 'grammars_tab').li(class: 'current_tab').text == 'My Grammars'}
         @browser.link(href: /choose_grammar.*#{test_grammar.id}/).click
+        @browser.link(href: /my_grammars/).click
 
         assert_match /"A Simple Grammar" \(private\) is the current grammar\. It contains #{test_grammar.rules.size} rules, listed below\./,
                      @browser.div(class: 'grammar_yield').text
