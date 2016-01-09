@@ -48,7 +48,7 @@ class GrammarTest < ActionDispatch::IntegrationTest
 
         @browser.text_field(id: 'rule_2_name').set 'T'
         @browser.text_field(id: 'rule_2_pattern').set '/b/, "S"'
-        @browser.text_field(id: 'rule_2_translation').set '/B/, 2'
+        @browser.text_field(id: 'rule_2_translation').set '"B", 2'
 
         @browser.button(value: 'Create Grammar').click
       end
@@ -64,6 +64,7 @@ class GrammarTest < ActionDispatch::IntegrationTest
         @browser.link(href: /my_grammars/).click
         Watir::Wait.until{ @browser.ul(id: 'grammars_tab').li(class: 'current_tab').text == 'My Grammars'}
         @browser.link(href: /choose_grammar.*#{test_grammar.id}/).click
+        @browser.link(href: /my_grammars/).click
 
         assert_match /"A Simple Grammar" \(private\) is the current grammar\. It contains #{test_grammar.rules.size} rules, listed below\./,
                      @browser.div(class: 'grammar_yield').text
