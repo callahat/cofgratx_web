@@ -21,7 +21,7 @@
     <% end %>
 
     <p>Rules for the current grammar:</p>
-    <% cache :cgid => @current_grammar.id do %>
+    <% cache :cgid => @current_grammar.id, skip_digest: true do %>
       <%= print_rules(@current_grammar).html_safe %>
     <% end %>
 

@@ -30,8 +30,8 @@ class UserController < ApplicationController
   end
 
   def verify
-    @user = User.new(params[:user])
-    @auser = User.authenticate(params[:user])
+    @user = User.new(user_params)
+    @auser = User.authenticate(user_params)
 
     if @auser.nil?
       flash[:notice] = "Invalid password."
@@ -55,7 +55,7 @@ class UserController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
 
     if @user.save
       permission = Permission.new
@@ -73,5 +73,11 @@ class UserController < ApplicationController
   end
 
   def update
+  end
+
+  protected
+
+  def user_params
+    params.require(:user).permit(:name,:email,:passwd,:passwd2)
   end
 end

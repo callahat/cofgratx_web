@@ -15,27 +15,31 @@ class GrammarController < ApplicationController
       @string = ''
       @result = 'result'
     else #user hit translate button
-      @start = params[:start]
-      @string = params[:string]
-      @result = ""
-      errors,message = session[:cfg].checkRules(@start)
-      if errors
-        flash[:notice] = message
-      else
-        candidates = session[:cfg].txString(@start, @string)
-        oldstring, newstring = candidates.first
-        if oldstring == -1
-          flash[:notice] = "Failed to match given string for this grammar, with given starting rule."
+      begin
+        @start = params[:start]
+        @string = params[:string]
+        @result = ""
+        errors,message = session[:cfg].checkRules(@start)
+        if errors
+          flash[:notice] = message
         else
-          flash[:notice] = "String matches given grammar, with given starting rule"
-          @result = newstring
+          candidates = session[:cfg].txString(@start, @string)
+          oldstring, newstring = candidates.first
+          if oldstring == -1
+            flash[:notice] = "Failed to match given string for this grammar, with given starting rule."
+          else
+            flash[:notice] = "String matches given grammar, with given starting rule"
+            @result = newstring
+          end
         end
+      rescue
+        flash[:notice] = "Failed to match given string for this grammar, with given starting rule."
       end
     end
   end
 
   def choose_grammar
-    @grammar = Grammar.first(:conditions => ['id = ?', params[:id]])
+    @grammar = Grammar.find(params[:id])
     if @grammar.nil?
       flash[:notice] = "Error: The grammar selected was not found."
     elsif @grammar.public || (session[:user] && @grammar.user_id == session[:user][:id])
@@ -81,7 +85,7 @@ class GrammarController < ApplicationController
   end
 
   def create
-    @grammar = Grammar.new(params[:grammar])
+    @grammar = Grammar.new(grammar_params)
     @rule_array = gen_rule_array(params[:rule])
 
     @grammar.user_id = session[:user][:id]
@@ -132,7 +136,7 @@ class GrammarController < ApplicationController
       return
     end
 
-    Rails.logger.error "Failed update of older version of \"" + @grammar.name + "\"" if !@grammar.update_attributes(params[:grammar])
+    Rails.logger.error "Failed update of older version of \"" + @grammar.name + "\"" if !@grammar.update_attributes(grammar_params)
 
     @rule_array = gen_rule_array(params[:rule])
 
@@ -168,11 +172,11 @@ class GrammarController < ApplicationController
 protected
   def setup_grammars_hash
     @grammars = {}
-    @grammars[:public] = Grammar.all(:conditions => ['public = true and version_type = 1'])
+    @grammars[:public] = Grammar.where(public: true, version_type: 1)
     if session[:user].nil?
       @grammars[:mine] = []
     else
-      @grammars[:mine] = Grammar.all(:conditions => ['user_id = ? and version_type = 1', session[:user].id])
+      @grammars[:mine] = Grammar.where(user_id:  session[:user].id, version_type: 1)
     end
   end
 
@@ -184,6 +188,8 @@ protected
     Rails.logger.debug "\n******************Saving rules*****************\n"
     0.upto(ra.size-1){|i|
       Rails.logger.debug ra[i].name
+      Rails.logger.debug ra[i].pattern
+      Rails.logger.debug ra[i].translation
     }
     all_saved = true
     ra.each{ |r|
@@ -216,8 +222,14 @@ protected
   end
 
   def expire_fragments(gid)
+    expire_fragment(:controller => "grammar", :action => "my_grammars", :action_suffix => "navfalse", :cgid => gid)
     expire_fragment(:controller => "grammar", :action => "workpad", :cgid => gid)
     expire_fragment(:controller => "grammar", :action => "my_grammars", :cgid => gid)
     expire_fragment(:controller => "grammar", :action => "public_grammars", :cgid => gid)
+    expire_fragment(cgid: gid)
+  end
+
+  def grammar_params
+    params.require(:grammar).permit(:name,:desc,:public)
   end
 end

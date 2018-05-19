@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   def self.authenticate(user)
     return nil if user.nil?
-    find(:first, :conditions => ["name = ? AND passwd = ?", user[:name], sha1(user[:passwd])])
+    find_by(name:  user[:name],passwd: sha1(user[:passwd]))
   end
   
   def self.authenticate?(name, pass)
@@ -43,13 +43,13 @@ protected
   def send_reg_mail
     unless $bulk_loading
       subject = "COFGRATX registration email"
-      Emailer.reg_mail(self.email, subject, self.name, self.reg_hash).deliver
+      Emailer.reg_mail(self.email, subject, self.name, self.reg_hash).deliver_now
     end
   end
 
   validates_uniqueness_of :name, :on => :create
   validates_presence_of :name,:passwd, :passwd2, :email, :on => :create
-  validates_format_of :email, :with => /^.*?@.*?\..{2,4}$/,:on => :create
+  validates_format_of :email, :with => /\A.*?@.*?\..{2,4}\z/,:on => :create
   
   def validate
     if passwd != passwd2 

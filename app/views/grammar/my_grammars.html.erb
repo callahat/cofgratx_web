@@ -9,7 +9,7 @@
   <% if @current_grammar.nil? %>
     Please choose a grammar from the left.
   <% else %>
-    <% cache :cgid => @current_grammar.id do %>
+    <% cache :cgid => @current_grammar.id, skip_digest: true do %>
       "<%= @current_grammar.name %>" <% if @current_grammar.public%>(public)<% else %>(private)<%end%> is the current grammar. It contains <%= @current_grammar.rules.size %> rules, listed below.
 	  
       <%= print_rules(@current_grammar).html_safe %>

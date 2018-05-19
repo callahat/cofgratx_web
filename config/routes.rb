@@ -12,7 +12,8 @@ Cofgratx::Application.routes.draw do
 
   resource :grammar, :controller => :grammar, :except => [:show] do
     collection do
-      match :workpad
+      get :workpad
+      post :workpad
       get :choose_grammar
       get :my_grammars
       get :public_grammars
