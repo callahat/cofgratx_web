@@ -181,7 +181,7 @@ protected
   end
 
   def get_current_grammar
-    @current_grammar = Grammar.find(session[:current_grammar_id])
+    @current_grammar = Grammar.find_by_id(session[:current_grammar_id])
   end
 
   def save_rules(ra, g)

@@ -1,5 +1,0 @@
-PassengerEnabled On
-PassengerAppRoot /home/callahat/projects/rails/cofgratx.callahat.net
-PassengerRuby /usr/local/ruby20/bin/ruby
-PassengerLoadShellEnvVars On
-RailsEnv development
