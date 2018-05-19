@@ -16,6 +16,8 @@ Cofgratx::Application.configure do
   config.action_controller.cache_store                 = :file_store, Rails.root.to_s+"/tmp/cache/"
   #config.action_view.cache_template_loading            = true
 
+  config.active_support.test_order = :random
+
   # Disable request forgery protection in test environment
   config.allow_forgery_protection    = false
 
@@ -33,4 +35,5 @@ Cofgratx::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+  config.eager_load = false
 end

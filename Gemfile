@@ -1,8 +1,9 @@
 source 'http://rubygems.org'
 
-gem 'rake', '0.9.6'
+gem 'rake'
 
-gem 'rails', '~> 3.2.11'
+gem 'rails', '4.2.10'
+gem 'activerecord-session_store'
 gem 'dynamic_form'
 
 gem 'mysql2'

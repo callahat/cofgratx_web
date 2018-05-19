@@ -7,7 +7,7 @@ class ActiveSupport::TestCase
   self.use_transactional_fixtures = false
 end
 
-class GrammarTest < ActionDispatch::IntegrationTest
+class GrammarIntegrationTest < ActionDispatch::IntegrationTest
   def setup
     #To just run with something like firefox, comment out the headless lines.
     @headless = Headless.new
@@ -22,8 +22,8 @@ class GrammarTest < ActionDispatch::IntegrationTest
   end
 
   def teardown
-    @browser.close
-    @headless.destroy
+    @browser.close if @browser
+    @headless.destroy if @headless
   end
 
   test 'new grammar' do
